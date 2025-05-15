@@ -1,0 +1,140 @@
+<section class="container-fluid tcards mb-5 mt-n3 pt-3 pb-5 f4back">
+    <div class="container-lg">
+        <div class="row">
+            <#assign counter_manuales = 0>
+            <#if Fieldset41651545.getSiblings()?has_content>      
+    	        <#list Fieldset41651545.getSiblings()?sort_by(["Fecha","data"])?reverse as cur_imagenes>
+    		       <div class="col-12 col-sm-6 col-md-6 col-lg-4 px-4"> 
+                        <div class="card1 shadow">
+                            <div class="card-header1">
+                                <img loading="lazy" alt="${cur_imagenes.TituloCard.getData()}" src="${cur_imagenes.Imagen.getData()}" class="w-100 rounded-top">
+                            </div>
+    
+                            <div class="card-body1 p-3">
+                                <h3 class="titles2 fblack">${cur_imagenes.TituloCard.getData()}</h3>
+                                <p class="ptxt4 fred mt-2 categ">${cur_imagenes.CategoriaCard.getData()}</p>
+                                <p class="ptxt2 fblack desc">
+                                    ${cur_imagenes.Descripcion.getData()?truncate(100)}
+                                </p>
+                                <p class="metadata">
+                                    ${cur_imagenes.Fecha.getData()}
+                                    &nbsp;|&nbsp;${cur_imagenes.MinutosLectura.getData()}
+                                </p>
+                            </div>
+                        </div>
+                   </div><!-- /.col-12 col-sm-6 -->
+                    <#assign counter_manuales++>   
+                    <#if counter_manuales == 3> <#break> </#if>                                   
+    	        </#list>
+            </#if>
+        </div>
+        
+                
+        <#assign counter_manuales2 = 0>
+        <div class="row mt-4 mb-4">
+            <div class="col-12 text-center">
+                <div class="collapse" id="collapseManuales">                  
+                    <div class="row">
+                        <#if Fieldset41651545.getSiblings()?has_content>      
+                            <#list Fieldset41651545.getSiblings() as cur_imagenes2>                   
+                                <div class="col-12 col-sm-6 col-md-6 col-lg-4 px-4"> 
+                                    <div class="card1 shadow">
+                                        <div class="card-header1">
+                                            <img loading="lazy" alt="${cur_imagenes2.TituloCard.getData()}" src="${cur_imagenes2.Imagen.getData()}" class="w-100 rounded-top">
+                                        </div>
+                
+                                        <div class="card-body1 p-3">
+                                            <h3 class="titles2 fblack">${cur_imagenes2.TituloCard.getData()}</h3>
+                                            <p class="ptxt4 fred mt-2 categ">${cur_imagenes2.CategoriaCard.getData()}</p>
+                                            <p class="ptxt2 fblack desc">
+                                                ${cur_imagenes2.Descripcion.getData()?truncate(100)}
+                                            </p>
+                                            <p class="metadata">
+                                                ${cur_imagenes2.Fecha.getData()}
+                                                &nbsp;|&nbsp;${cur_imagenes2.MinutosLectura.getData()}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div><!-- /.col-12 col-sm-6 -->                                                                                             
+                                <#assign counter_manuales2++>                                                   
+                            </#list>
+                        </#if>
+                    </div>                 
+                </div><!-- #collapseManuales -->
+                
+                <#if (counter_manuales >= 4)>
+                    <button class="btn redbtn px-5 shadow-none" type="button" data-toggle="collapse" data-target="#collapseManuales" aria-expanded="false" aria-controls="collapseManuales" id="collCards">
+                    Ver más
+                </button>
+                </#if>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<style>
+    .card1:hover{
+        transform: translate(0, -10px);
+        -webkit-transition: .3s ease all;
+        -moz-transition: .3s ease all;
+        transition: .3s ease all;
+        -webkit-box-shadow: -1px 10px 10px 0px rgba(128,128,128,0.75);
+        -moz-box-shadow: -1px 10px 10px 0px rgba(128,128,128,0.75);
+        box-shadow: -1px 10px 10px 0px rgba(128,128,128,0.75);
+    }
+    .card-body1{
+        height: 200px;
+    }
+    .card-body1 .categ{
+        font-family: 'GothamPro-Bold', Arial, Helvetica, sans-serif;
+    }
+    .card-body1 .titles2{
+        font-family: 'GothamPro', Arial, Helvetica, sans-serif;
+    }
+    .card-body1 .desc{
+        font-family: 'GothamPro-Light', Arial, Helvetica, sans-serif;
+    }
+    .metadata{
+        font-family: 'GothamPro-Bold', Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        line-height: 16.8px;
+        position: absolute;
+        width: 90%;
+        bottom: 0;
+        right: 0;
+        left: 5%;
+    }
+    .tcards .card1{
+        border: 1px solid #B5BAC7;
+        display: block;
+        margin-bottom: 1.5rem;
+        position: relative;
+        width: 100%;
+        border-radius: 8px;
+    }
+    .tcards .btn{
+        font-family: 'GothamPro', Arial, Helvetica, sans-serif;
+        font-size: 16px;
+    }
+    @media screen and (max-width: 1024px){
+        .tcards .card1 .card-body1{
+            height: 196px;
+        }
+    }
+    @media screen and (max-width: 440px){
+        .tcards .card1 .card-body1{
+            height: 203px;
+        }
+    }
+</style>
+
+<script>
+    $("#collCards").click(function(){
+        if($(".collapse").is(".show")) {
+            $("#collCards").text("Ver más");
+        }else{
+            $("#collCards").text("Ver menos");
+        }
+    });
+</script>

@@ -1,0 +1,44 @@
+<style>
+    #BanRegistrate{
+        background-color: var(--purple);
+        border-radius: 16px;
+    }
+    #BanRegistrate .logo-mobility{
+        width: 120px;
+        margin-bottom: 15px;        
+    }
+    #BanRegistrate .backside{
+        background-image: url("${ImagenPrincipal.getData()}");
+        background-size: cover;
+        background-position: center;
+        background-attachment: scroll;
+        background-repeat: no-repeat;
+    }
+    @media(max-width: 767px){
+        .BanRegistrate{
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        #BanRegistrate .btn{
+            width: 100%;
+        }
+    }
+</style>
+
+<section class="container-fluid">
+    <div class="container-lg my-5" id="BanRegistrate">
+        <div class="row">
+            <div class="col-lg-8 py-4 px-4">
+                <p class="titles2 fwhite">${Titulo_Banner.getData()}</p>
+                <img src="${Logos.getData()}" class="img-fluid logo-mobility" alt="Mobility ADO">
+                <p class="ptxt2 fwhite" data-aos="fade-up" data-aos-duration="1000">
+                    ${Descripcion.getData()}
+                </p>
+                <p class="mt-2">
+                    <a href="${LinkBoton.getData()}" target="_blank" class="btn btn-sm redbtn px-3 animate__animated animate__fadeInUp" role="button" data-aos="fade-right" data-aos-duration="1000">${Text61786706.getData()}</a>
+                </p>
+            </div>
+            <div class="col-lg-4 backside"> </div>
+        </div>
+    </div>
+</section>

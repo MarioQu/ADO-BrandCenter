@@ -1,0 +1,149 @@
+<article class="container-fluid main-history-corp-values py-5 mt-n3" style="background: ${ColorDeFondo.getData()};">
+    <div class="container-lg py-4 container__itemsIT">
+        <#if Titulo.getData() != "">       
+            <div class="row">
+                <div class="col-lg-6 text-left">
+                    <p class="fred subtitles">${Subtitulo.getData()}</p>
+                </div>
+                <div class="col-lg-6 text-left">
+                    
+                </div>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 text-left">
+                    <h2 class="titles1 fpurple" data-aos="fade-up" data-aos-duration="1300">${Titulo.getData()}</h2>
+                </div>
+                <div class="col-lg-6 text-left">
+                    <p class="ptxt text-left" data-aos="fade-down" data-aos-duration="1600">${Descripcion.getData()}</p>
+                </div>
+                <hr>
+            </div>
+        </#if>
+        
+        <#assign counter = 1000>
+        <#if Item.getSiblings()?has_content>
+            <#list Item.getSiblings()?chunk(4) as row>
+                <div class="row mt-5 pb-0 text-left text-md-center justify-content-between itemsIT__content">
+                    <#assign classe = "align-items-center d-flex">
+                    <#list row as cur_Item>                        
+
+                        <#if DireccionDelTexto.getData() =="centro">
+                            <#assign classe = " flex-column">
+                        </#if>
+
+                        <#-- numero de columnas -->
+                        <#if NumeroDeColumnas.getData() =="una">
+                        <section class="col justify-content-center flex-column">
+                        </#if>
+
+                        <#if NumeroDeColumnas.getData() =="dos">
+                        <section class="col-md-6 col-sm-12 justify-content-center flex-column">
+                        </#if>
+
+                        <#if NumeroDeColumnas.getData() =="tres">
+                        <section class="col-md-4 col-sm-12 justify-content-center flex-column mb-3 mb-md-0" data-aos="fade-down" data-aos-duration="${counter}">
+                        </#if>
+
+                        <#if NumeroDeColumnas.getData() =="cuatro">
+                        <section class="col-md-3 col-sm-12 justify-content-center flex-column">
+                        </#if>                        
+                            
+                            <div class="col text-left">
+                                <#if DireccionDelTexto.getData() =="izq">
+                                    <h3 class="content__title--font mx-3">
+                                        ${cur_Item.Texto.getData()}
+                                    </h3>
+                                </#if>
+
+                                <#if (cur_Item.Icono.getData())?? && cur_Item.Icono.getData() != "">
+                                    <img 
+                                        alt="${cur_Item.Icono.getAttribute("alt")}"
+                                        data-fileentryid="${cur_Item.Icono.getAttribute("fileEntryId")}"
+                                        src="${cur_Item.Icono.getData()}" 
+                                        class="img-fluid mb-3"/>
+                                </#if>
+
+                                <#if DireccionDelTexto.getData() =="der">
+                                    <h3 class="titles2 fpurple">
+                                        ${cur_Item.Texto.getData()}
+                                    </h3>
+                                </#if>
+
+                                <#if DireccionDelTexto.getData() =="centro">                                
+                                    <h3 class="content__title--font col-12 my-3">
+                                        ${cur_Item.Texto.getData()}
+                                    </h3>
+                                </#if>
+                                <p>
+                                    ${cur_Item.DescripcionDetalle.getData()}
+                                </p>
+                            </div>
+                        </section>
+                        <#assign counter = counter + 350>
+                    </#list>
+                </div>
+            </#list>
+        </#if>
+            
+           
+        <div class="row mt-2 mt-md-5">
+            <div class="col-12 text-left">
+                <a href="${LinkBotonExplorar.getData()}" class="btn px-5 purplebtn mr-3" data-aos="fade-right" data-aos-duration="1300">${BotonExplorar.getData()}</a>
+                <a href="${LinkBotonDescargar.getData()}" class="btn px-5 whitebtn" data-aos="fade-right" data-aos-duration="1600">${BotonDescargar.getData()}</a>
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<style>
+    .whitebtn{
+        border: 1px solid var(--purple);
+    }
+    .txt_items_icono_texto{
+        display: inline-block;
+        width: 80%;
+        font-family: 'GothamPro';
+    }
+    .btn_items_icono_texto{
+        display: inline-block;
+        background: #5F2167;
+        color: #fff !important;
+        text-align: center;
+        width: fit-content;
+        padding: 5px 3%;
+        border-radius: 5px;
+        vertical-align: top;
+        margin-left: 2%;
+    }
+
+    .left_al{
+        text-align: left;
+        font-family: 'GothamPro';
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16.8px;
+        margin-top: 13px;
+    }
+    .container__itemsIT{
+        font-family: 'GothamPro';
+        text-align: center;
+        font-size: 14px;
+        line-height: 16.8px;
+    }
+    .itemsIT__content img{
+        width: 35px;
+    }
+    .titles2{
+        font-weight: 400;
+    }
+    hr{
+        background:${ColorDeTexto.getData()};
+    }
+    @media only screen and (max-width: 600px){
+        .txt_items_icono_texto {width: 100%;}
+        .btn_items_icono_texto {width: 100%; padding: 10px;}
+
+    }
+</style>

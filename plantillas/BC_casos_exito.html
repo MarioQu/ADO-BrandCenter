@@ -1,0 +1,75 @@
+<style>
+    .metadata{
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 16.8px;
+    }
+    .tcards .card1{
+        border: 1px solid #B5BAC7;
+        display: block;
+        margin-bottom: 1.5rem;
+        position: relative;
+        width: 100%;
+        border-radius: 8px;
+    }
+    .ptxt2{
+        font-family: 'GothamPro-Light', Arial, Helvetica, sans-serif;
+    }
+    .tcards .card-body1 .btn-red:hover{
+        background-color:#E11F2A;
+        color:#fff;
+    }
+
+    @media screen and (max-width: 1024px){
+        .tcards .card1 .card-body1{
+            height: 296px;
+        }
+    }
+    @media screen and (max-width: 440px){
+        .tcards .card1 .card-body1{
+            height: 203px;
+        }
+    }
+</style>
+
+
+<section class="tcards f4back py-3 mt-n3">
+    <div class="container-fluid">
+        <div class="container-lg">
+            <div class="row">
+                <#if Imagenes.getSiblings()?has_content>
+                    <#list Imagenes.getSiblings() as cur_Imagenes>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 pr-4"> 
+                        <div class="card1 shadow">
+                            <div class="card-header1">
+                                <img loading="lazy"
+                                    alt="${cur_Imagenes.TituloCard.getData()}"                                    
+                                    src="${cur_Imagenes.Imagen.getData()}"
+                                    class="w-100 rounded-top">
+                            </div>
+    
+                            <div class="card-body1 p-3">
+                                <h3 class="titles2 fblack">${cur_Imagenes.TituloCard.getData()}</3>
+                                <p class="ptxt4 fred mt-2">${cur_Imagenes.CategoriaCard.getData()}</p>
+                                <p class="ptxt2 fblack">${cur_Imagenes.descripcioncard.getData()}</p>
+                                <p class="metadata">
+
+                                    ${cur_Imagenes.fecha.getData()}
+                                                                
+                                    &nbsp;|&nbsp;${cur_Imagenes.MinutosLectura.getData()}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    </#list>
+                </#if>
+            </div>
+                           
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <a href="${LinkBoton.getData()}" class="btn redbtn px-5">${BotonVerMas.getData()}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

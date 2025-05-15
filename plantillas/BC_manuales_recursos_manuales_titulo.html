@@ -1,0 +1,19 @@
+<section class="container-fluid pt-5 pb-4 f4back mt-n3" id="explora">   
+    <div class="container-lg">
+        <div class="row">
+            <div class="col-12">
+                <#if (Subtitulo.getData()) != "">
+                    <p class="fred subtitles text-left text-md-center">
+                        ${Subtitulo.getData()}
+                    </p>
+                </#if>
+
+                <h2 class="titles1 fpurple text-left text-md-center">${Titulo.getData()}</h2>
+                
+                <p class="text-left text-md-center fblack ptxt mt-4">
+                    ${Descripcion.getData()}
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

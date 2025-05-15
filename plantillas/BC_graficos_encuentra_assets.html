@@ -1,0 +1,60 @@
+<style>
+    #cont_funciones{
+        background-color: #F4F6F9;
+    }
+    #cont_funciones .header{
+        border-bottom: 1px solid #B5BAC7;
+    }
+    #cont_funciones .rowFunciones .cust_header{
+        height: 50px;
+    }
+    #cont_funciones .rowFunciones .cust_header img{
+        width: 40px;
+    }
+    
+    @media(max-width: 767px){
+        #cont_funciones .btn{
+            width: 100%;
+        }
+    }
+</style>
+
+
+<section class="container-fluid py-5 mt-n4" id="cont_funciones">   
+    <div class="container-lg">       
+        <h2 class="fdark3 titles3">${Titulo.getData()}</h2>
+        ${DescripcionGeneral.getData()}
+        
+        <div class="row mt-3 header">
+            <div class="col-lg-8">
+                <p class="fdark3 ptxt2" data-aos="fade-up" data-aos-duration="1200">
+                    ${DescripcionGeneral.getData()}
+                </p>
+            </div>
+            <div class="col-lg-3 offset-lg-1 d-flex align-items-center justify-content-end pb-3">
+                <a href="${LinkBoton.getData()}" target="_blank" class="btn purplebtn px-3" data-aos="fade-down" data-aos-duration="1500">
+                    ${Text07843539.getData()}
+                </a>
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <#assign counter = 1000>
+            
+            <#if Recursos.getSiblings()?has_content>
+                <#list Recursos.getSiblings() as cur_Recursos>
+                    <div class="col-lg-6 rowFunciones mb-2" data-aos="fade-left" data-aos-duration="${counter}">
+                        <div class="cust_header d-flex align-items-center justify-content-start">
+                            <img src="${cur_Recursos.LogoPasosCentroRecursos.getData()}" class="img-fluid mr-3" alt="">
+                            <h3 class="fpurple titles4 mb-0 pb-o">${cur_Recursos.TituloPasosCentroRecursos.getData()}</h3>
+                        </div>
+                        <p class="ptxt2 pt-2">
+                            ${cur_Recursos.DescripcionPasosCentroRecursos.getData()}
+                        </p>
+                    </div> 
+                    <#assign counter = counter + 300>
+                </#list>
+            </#if>              
+        </div>  
+    </div>
+</section>

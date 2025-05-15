@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="/documents/d/smi/aos">
+<script src="/documents/d/smi/aos-1"></script>
+
+<style>  
+    /* Movilidad sin limtes */
+    .movilidad-sin-limites{
+        /*background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${Banner.getData()}");*/
+        background-image: url("${Banner.getData()}");
+        background-size: cover;
+        background-position: center;
+        background-attachment: scroll;
+        background-repeat: no-repeat;
+        color: var(--black);
+        height: 600px;
+        display: flex;
+        align-items: end;
+        padding-bottom: 30px;
+    }
+    @media(max-width: 767px){
+        .movilidad-sin-limites{
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        .movilidad-sin-limites .btn{
+            width: 100%;
+        }
+    }
+</style>
+
+<section class="container-fluid movilidad-sin-limites">
+    <div class="container-lg my-4">
+        <div class="row">
+            <div class="col-12 faback p-4 rounded-lg" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="titles3 fdark3">${Titulo.getData()}</h2>
+                <p class="ptxt fdark3">${Descripcion.getData()}</p>
+                
+
+                <#if (BotonTexto.getData()) != "">
+                    <p>
+                        <a href="${BotonLink.getData()}" class="btn purplebtn px-5" data-aos="zoom-in" data-aos-duration="1300">${BotonTexto.getData()}</a>
+                    </p>
+                
+                </#if>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    AOS.init();
+</script>

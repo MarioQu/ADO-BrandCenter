@@ -1,0 +1,86 @@
+<style>
+    #cont_funciones{
+        background-color: #ffffff !important;
+    }
+    #cont_funciones .header{
+        border-bottom: 1px solid #B5BAC7;
+    }
+    .rowFunciones2 .div-icon{
+        width: 10%;
+    }
+    .rowFunciones2 .div-title{
+        width: 90%;
+    }
+    @media(max-width: 767px){
+        .rowFunciones2 .div-icon{
+            width: 100%;
+        }
+        .rowFunciones2 .div-title{
+            width: 100%;
+        }
+        .rowFunciones2 .div-icon img{
+            width: 50px;
+        }
+        #cont_funciones .btn{
+            width: 100%;
+        }
+    }
+    @media(max-width: 767px) and (orientation: landscape){
+        .rowFunciones2 .div-icon{
+            width: 10%;
+        }
+        .rowFunciones2 .div-title{
+            width: 90%;
+        }
+    }
+</style>
+
+
+<section class="container-fluid">
+    <div class="container-lg my-4" id="cont_funciones">
+        <h2 class="fdark3 titles3">${Titulo.getData()}</h2>
+        
+        <div class="row mt-3 header">
+            <div class="col-12 col-sm-9 col-lg-8">
+                <p class="fdark3 ptxt2" data-aos="fade-up" data-aos-duration="1000">
+                    ${DescripcionGeneral.getData()}
+                </p>
+            </div>
+            <div class="col-12 col-sm-3 col-lg-3 offset-lg-1 d-flex align-items-center justify-content-end pb-3">
+                <a href="${LinkBoton.getData()}" target="_blank" class="btn purplebtn px-3" data-aos="fade-down" data-aos-duration="1300">${TextoBoton.getData()}</a>
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <#assign counter = 1000>
+            
+            <#if Funcion.getSiblings()?has_content>
+                <#list Funcion.getSiblings() as cur_funcion>
+                    <div class="col-lg-6 rowFunciones2 mb-4" data-aos="fade-up" data-aos-duration="${counter}">                        
+                        <div class="row mb-2">
+                            <div class="col-12 d-flex align-items-center flex-column flex-sm-row flex-md-row flex-lg-row justify-content-start">
+                                <div class="div-icon pr-2">
+                                    <img src="${cur_funcion.FuncionesLogo.getData()}" class="img-fluid" alt="">
+                                </div>
+                                <div class="div-title pl-1 pt-2 pt-sm-2 pt-md-0 pt-lg-0">
+                                    <h3 class="fpurple titles4 mb-0 pb-0">${cur_funcion.TituloFuncion.getData()}</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="ptxt2 pt-2">
+                                    ${cur_funcion.DescripcionFuncion.getData()}
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <#assign counter = counter + 400>                 
+                </#list>
+            </#if>
+        </div>
+    </div>
+</section>
+
+

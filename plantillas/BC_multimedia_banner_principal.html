@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="/documents/d/smi/aos">
+<script src="/documents/d/smi/aos-1"></script>
+
+<style>
+    #multi_manibanner .backimage{
+        background-image: url("${ImagenDestacada.getData()}");
+        background-attachment: scroll;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 500px;
+    }
+</style>
+
+
+<section id="multi_manibanner" class="container-fluid purpleback">
+    <div class="row purpleback">
+        <div class="col-lg-5 offset-lg-1 my-5 d-flex align-items-center justify-content-start">
+            <div>
+                <p class="fwhite subtitles" data-aos="fade-up" data-aos-duration="1200">
+                    ${Subtitulo.getData()}
+                </p>
+                <h1 class="titles1 fwhite mb-3" data-aos="fade-down" data-aos-duration="1600">${Titulo.getData()}</h1>
+                <p class="ptxt2 fwhite mb-3" data-aos="fade-up" data-aos-duration="1400">
+                    ${Descripcion.getData()}
+                </p>
+                <p>
+                    <a href="${LinkBoton.getData()}" target="_blank" class="btn redbtn px-5" data-aos="fade-right" data-aos-duration="1500">${TextoBoton.getData()}</a>
+                </p>
+            </div>
+        </div>
+        
+        <div class="col-lg-6 backimage d-none d-lg-block"></div>
+    </div>
+</section>
+
+<script>
+    AOS.init();
+</script>

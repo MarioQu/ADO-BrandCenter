@@ -1,0 +1,144 @@
+<#assign slick_css                  = "/documents/4523468/4624446/slick.css" >
+<#assign slick_theme                = "/documents/4523468/4624446/slick-theme.css" >
+<#assign slick_js                   = "/documents/4523468/4624446/slick.min.js" >
+<#assign left_slide                 = "/documents/4523468/4634630/left-slide.png" >
+<#assign next_slide                 = "/documents/4523468/4634630/next-slide.png" >
+
+
+<link rel="stylesheet" type="text/css" href="${slick_css}"/>
+<link rel="stylesheet" type="text/css" href="${slick_theme}"/>
+<script type="text/javascript" src="${slick_js}"></script>
+
+
+<div class="container-fluid">
+    <div class="container-lg">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="titles1 fpurple text-center">
+                    <#if (title_carr.getData())??>
+                        ${title_carr.getData()}
+                    </#if>
+                </h3>
+                <p class="ptxt text-center fblack">
+                    <#if (desc_carr.getData())??>
+                        ${desc_carr.getData()}
+                    </#if>
+                </p>
+            </div>
+            
+            <div class="col-12">               
+                <div id="carrusel_videos">
+                    <#assign counter=0>
+                    <#if fields_videos.getSiblings()?has_content>
+                        <#list fields_videos.getSiblings() as cur_fields_videos>                        
+                            <div class="mx-2 video-container">
+                                <#if (radio_video.getData()) == "biblioteca">
+                                    <video src="${cur_fields_videos.video_biblioteca.getData()}" muted autoplay loop class="video_back"></video>
+                                <#else>                                    
+                                    <iframe src="https://www.youtube.com/embed/${fields_videos.video_youtube.getData()}?autoplay=1&loop=1&mute=1&rel=0&controls=0&showinfo=0&playlist=${fields_videos.video_youtube.getData()}" frameborder="0" class="yt-video"></iframe>
+                                </#if>
+                            </div>
+                            <#assign counter++>
+                        </#list>
+                    </#if>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#carrusel_videos').slick({    
+            <#if counter <=4 >
+                dots: false,   
+            <#else>
+                dots: true,
+            </#if>     
+            infinite: true,
+            arrows: true,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                    arrows: true
+                }
+            },
+            {
+                breakpoint: 1000,
+                settings: {
+                    slidesToShow: 2,
+                    dots: true,
+                    arrows: true,
+                    prevArrow: true,
+                    nextArrow: true,
+                }
+            },
+            {
+                breakpoint: 670,
+                settings: {
+                    slidesToShow: 1,
+                    dots: true,
+                    arrows: true,
+                    prevArrow: false,
+                    nextArrow: true,
+                }
+            }
+        ]
+        });
+    });
+</script>
+
+<style>
+    .video-container{
+        border-radius: 10px;
+        position: relative; 
+        overflow: hidden;
+        height: 250px; 
+        width: 100%; 
+    }.video-container:hover{
+        box-shadow: 0px 1px 16px 1px rgba(0,0,0,0.75);
+        transition: .2s ease all;
+        margin-top: -20px;
+    }
+    .video_back,
+    .yt-video{
+        transform: translate(-50%,-50%);
+        position: absolute;
+        height: 400px;
+        width: 500px;
+        left: 50%;
+        top: 50%;
+    }
+    #carrusel_videos .slick-dots li button {
+        background: #BFBFBF;
+        border-radius: 50%;
+        height: 15px;
+        width: 15px;
+    }#carrusel_videos .slick-dots .slick-active button {
+        background: var(--purple);
+    }#carrusel_videos .slick-prev, .botones-slider {
+        background: url( ${left_slide} ) no-repeat;
+        background-size: 40px;
+        border-radius: 30%;
+        left: 39%;
+        width: 40px;
+        height: 40px;
+        top: initial;
+        bottom: -55px;
+        z-index: 2;
+    }#carrusel_videos .slick-next, .botones-slider {
+        background: url( ${next_slide} ) no-repeat;
+        background-size: 40px;
+        border-radius: 30%;
+        right: 39%;
+        width: 40px;
+        height: 40px;
+        top: initial;
+        bottom: -55px;
+        z-index: 2;
+    }
+</style>

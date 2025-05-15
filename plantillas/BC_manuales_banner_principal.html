@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="/documents/d/smi/aos">
+<script src="/documents/d/smi/aos-1"></script>
+
+<style>
+    #manuales_main_banner .backimage{
+        background-image: url("${ImagenDestacada.getData()}");
+        background-attachment: scroll;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 500px;
+    }
+</style>
+
+
+<section id="manuales_main_banner" class="container-fluid purpleback">
+    <div class="row purpleback">
+        <div class="col-lg-5 offset-lg-1 d-flex align-items-center justify-content-start">
+            <div>
+                <p class="fwhite subtitles" data-aos="fade-right" data-aos-duration="1200">
+                    ${Subtitulo.getData()}
+                </p>
+                <h1 class="titles1 fwhite mb-3" data-aos="fade-up" data-aos-duration="1300">${Titulo.getData()}</h1>
+                <p class="ptxt2 fwhite mb-3">
+                    ${Descripcion.getData()}
+                </p>
+                
+                <#if (TextoBoton.getData()) != "">
+                    <p>
+                        <a href="${LinkBoton.getData()}" target="_blank" class="btn redbtn px-5" data-aos="fade-right" data-aos-duration="1600">
+                            ${TextoBoton.getData()}
+                        </a>
+                    </p>
+                </#if>  
+            </div>
+        </div>
+        
+        <div class="col-lg-6 backimage d-none d-lg-block">
+            
+        </div>
+    </div>
+</section>
+
+<script>
+    AOS.init();
+</script>

@@ -1,0 +1,98 @@
+<style>
+    #accordion_ado .card-header,
+    #accordion_ado .card-body{
+        height: auto;
+        border: none;
+        border-radius: 0;
+        background-color: #F4F6F9;
+    }
+    #accordion_ado .card{
+        border: none;
+        border-top: 1px solid #E11F2A;
+        background-color: #F4F6F9;
+        border-radius: 0 !important;
+        margin-bottom: 0;
+        box-shadow: none;
+    }
+    #accordion_ado .card:last-child{
+        border-bottom: 2px solid #1D1F24;
+    }
+    #accordion_ado .btn[aria-expanded="true"]::after{
+        content: "";
+        float: right;
+        width: 20px;
+        height: 20px;
+        background-image: url("/documents/d/smi/chevron-up");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 20px;
+        margin-top: -21px;
+    }
+    #accordion_ado .btn[aria-expanded="false"]::after{
+        content: "";
+        float: right;
+        width: 20px;
+        height: 20px;
+        background-image: url("/documents/d/smi/chevron-down");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 20px;
+        margin-top: -21px;
+    }
+    @media(max-width: 767px){
+        #accordion_ado .btn[aria-expanded="true"]::after,
+        #accordion_ado .btn[aria-expanded="false"]::after{
+            margin-right: -34px;
+        }
+    }
+</style>
+
+<section class="container-fluid py-5 f4back mt-n3" id="faqs">   
+    <div class="container-lg">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="fpurple titles1 text-center">${Titulo.getData()}</h1>
+                <p class="ptxt text-center">
+                    ${Descripcion.getData()}
+                </p>
+                
+                <div class="accordion mt-5" id="accordion_ado">
+                    <#assign count      = 1>
+                    <#assign countaos   = 1000>
+                    
+                    <#if GrupoPreguntas.getSiblings()?has_content>
+                        <#list GrupoPreguntas.getSiblings() as cur_GrupoPreguntas>                      
+                            <div class="card pt-3 pb-2" data-aos="fade-up" data-aos-duration="${countaos}">
+                                <div class="card-header pl-0" id="heading${count}">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-block text-left fpurple titles4 pl-0 shadow-none" type="button" data-toggle="collapse" data-target="#collapse${count}" aria-expanded="true" aria-controls="collapse${count}">
+                                            ${cur_GrupoPreguntas.Pregunta.getData()} <br>
+                                        </button>
+                                    </h2>
+                                </div>
+
+                                <div id="collapse${count}" class="collapse show" aria-labelledby="heading${count}" data-parent="#accordion_ado">
+                                    <div class="card-body fdark3 ptxt4 pl-0 ml-0">
+                                        ${cur_GrupoPreguntas.Respuesta.getData()} <br>
+                                    </div>
+                                </div>
+                            </div>
+                            <#assign count      = count + 1>
+                            <#assign countaos   = countaos + 250>
+                        </#list>
+                    </#if>						         
+                </div><!-- end accordion -->
+                
+                <p class="fdark3 text-center titles2 pt-5">
+                    ${PreguntaFooter.getData()} <br>
+                    <span class="ptxt" data-aos="fade-down" data-aos-duration="1400">${TextoFooter.getData()}</span>
+                </p>
+                <p class="text-center">
+                    <a href="${LinkBoton.getData()}" target="_blank" class="btn purplebtn ptxt4 px-5 fwhite" data-aos="fade-up" data-aos-duration="1400">
+                        ${TextoBoton.getData()}
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

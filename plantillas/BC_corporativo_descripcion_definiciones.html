@@ -1,0 +1,31 @@
+<style>
+    #desc_def{
+       padding-top: 112px; 
+       padding-bottom: 112px; 
+    }
+    #desc_def .btn{
+        border: 1px solid var(--purple);
+    }
+    @media(max-width: 767px){
+        #desc_def{
+            padding: 32px;
+        }
+    }
+</style>
+
+
+<section id="desc_def" class="container-fluid purpleback mt-n4">
+    <div class="container-lg">
+        <div class="row">
+            <div class="col-12 faback py-4 px-4 rounded-lg">
+                <h2 class="titles3 fdark3 mb-3">${Titulo.getData()}</h2>
+                <p class="ptxt2 fdark3 mb-3">
+                ${Descripcion.getData()} 
+                </p>
+                <p>
+                    <a href="${LinkBoton.getData()}" target="_blank" class="btn whitebtn px-4" data-aos="fade-left" data-aos-duration="1000">${TextoBoton.getData()}</a>
+                </p>
+            </div>
+        </div>
+    </div>   
+</section>

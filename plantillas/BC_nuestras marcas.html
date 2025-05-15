@@ -1,0 +1,674 @@
+<#assign slick_css                = "/documents/35636/40826/slick.css" >
+<#assign slick_theme                = "/documents/35636/40826/slick-theme.css" >
+<#assign slick_js                = "/documents/35636/40826/slick.min.js" >
+<#assign left_slide                = "/documents/35636/40835/left-slide.png" >
+<#assign next_slide                = "/documents/35636/40835/next-slide.png" >
+
+
+
+
+<link rel="stylesheet" type="text/css" href="${slick_css}"/>
+<link rel="stylesheet" type="text/css" href="${slick_theme}"/>
+<script type="text/javascript" src="${slick_js}"></script>
+
+
+<#assign article_id                = randomNamespace >
+
+
+<div class="principal-city_${article_id} mt-3">
+    <div class="bkg_completo"></div>
+
+    <div class="container-fluid">        
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <!-- principal rpw-->
+                <div class="row principal-row ">
+                    <div class="content">
+                        <div class="col-12 px-5">
+                            <h3 class="title">${ImagenBanner.titulo.getData()}</h3>
+                            <p class="description">${ImagenBanner.descripcion.getData()}</p>
+                            
+                            <#if ImagenBanner.enlace.getData() !="">
+                                <a href="${ImagenBanner.enlace.getData()}" class="see-all">${ImagenBanner.titulocities.getData()}</a>
+                                <#else>
+                                <div></div>
+                            </#if>
+                        </div>
+
+                        <div class="col-12">
+                            <div id="box_slide" class="slider_${article_id}">
+                                <#assign counter=0>
+
+                                <#if CardItem.getSiblings()?has_content>
+
+                                    <#list CardItem.getSiblings() as cur_city>
+                                        <#assign counter++>
+
+                                            <#if cur_city.url_img_click.getData() !="">
+                                            <div class="element swiper-slide" style="border: 0px solid #fff;">
+                                            <#else>
+                                            <div class="element swiper-slide">
+                                            </#if>
+                                    
+                                                <#if cur_city.url_img_click.getData() !="">
+                                                <div class="image img_btn" onclick="window.open(' ${cur_city.url_img_click.getData()} ', '_self');" style="background-image: url( ${cur_city.Imagen3od1.getData()} );">
+                                                <#else>
+                                                <div class="image" style="background-image: url( ${cur_city.Imagen3od1.getData()} );">
+                                                </#if>
+                                                    <#if cur_city.Texto7iey.getData() !="">
+                                                        <p class="name-city">${cur_city.Texto7iey.getData()}</p>
+                                                    </#if>
+                                                    
+                                                    <#if cur_city.txt_precio.getData() !="">
+                                                        <p class="price-experience">${cur_city.txt_precio.getData()}</p>
+                                                        <#else>
+                                                        <div></div>
+                                                    </#if>
+
+                                                    <#if cur_city.tit_w_img.getData() !="">
+                                                        <p class="tit_txt_w">${cur_city.tit_w_img.getData()}</p>
+                                                    </#if>
+                                                </div>
+
+                                                <div class="content-slider">
+                                                    <!--<h3 class="title-city">${cur_city.Texto7iey.getData()}</h3>-->
+
+                                                    <#if cur_city.txt_libre.getSiblings()?has_content>
+                                                        <#list cur_city.txt_libre.getSiblings() as cur_cityItem_txt_libre>
+                                                        <div>${cur_cityItem_txt_libre.getData()}</div>
+                                                        </#list>
+                                                    </#if>
+
+
+                                                    <#if cur_city.btn_comprar.getData() !="">
+                                                        <a href="${cur_city.btn_comprar.getData()}" class="buttonBuyNow" data-id-product="125">Comprar Ahora</a>
+                                                        <#else>
+                                                        <div></div>
+                                                    </#if>
+                                                                                        
+
+                                                    <#if cur_city.txt_libredos.getSiblings()?has_content>
+                                                        <#list cur_city.txt_libredos.getSiblings() as cur_CardItem_txt_libredos>
+                                                        <div>${cur_CardItem_txt_libredos.getData()}</div>
+                                                        </#list>
+                                                    </#if>
+
+
+                                                    <#if cur_city.txt_desc.getSiblings()?has_content>
+                                                        <#list cur_city.txt_desc.getSiblings() as cur_CardItem_txt_desc>
+                                                        <div class="txt_desc_bloq">
+                                                            <#if (cur_CardItem_txt_desc.img_bull.getData())?? && cur_CardItem_txt_desc.img_bull.getData() != "">
+                                                                <img class="bullet_img_cont" alt="${cur_CardItem_txt_desc.img_bull.getAttribute("alt")}" data-fileentryid="${cur_CardItem_txt_desc.img_bull.getAttribute("fileEntryId")}" src="${cur_CardItem_txt_desc.img_bull.getData()}" />
+                                                            </#if>
+                                                            <div>${cur_CardItem_txt_desc.getData()}</div>
+                                                        </div>
+                                                        </#list>
+                                                    </#if>
+
+                                                    <#if cur_city.tit_card_link.url_link_card.getData() !="">
+                                                    <a href="${cur_city.tit_card_link.url_link_card.getData()}" class="link-city">
+                                                        ${cur_city.tit_card_link.getData()} &nbsp;<img src="/documents/35636/40829/arrow_red.svg" alt="">
+                                                    </a>
+                                                    </#if>
+                                                    
+                                                </div>
+
+                                                <div class="cint_prom" style="color: ${cur_city.tit_prom.color_tit_prom.getData()} ; background: ${cur_city.tit_prom.color_bg_promo.getData()} ;">${cur_city.tit_prom.getData()}</div>
+
+                                            </div>
+                                    </#list>
+
+                                </#if>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <#if (ImagenIzquierda.getData())?? && ImagenIzquierda.getData() !="">
+                        <div class="image-float image-float-left d-none d-md-block" style="background-image: url(${ImagenIzquierda.getData()});">
+                        </div>
+                    </#if>
+                    <#if (ImagenDerecha.getData())?? && ImagenDerecha.getData() !="">
+                        <div class="image-float image-float-right d-none d-md-block" style="background-image: url(${ImagenDerecha.getData()});">
+                        </div>
+                    </#if>
+
+                    <div class="background-image"></div>
+
+                </div>
+                <!-- principal-->
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<script>
+    $(".slider_${article_id}").slick({
+    <#if (counter >= 4) >
+        slidesToShow: 4,
+        dots: true,
+    <#else>
+        slidesToShow: 3,
+    </#if>
+    <#if (counter <= 3) >
+        prevArrow: false,
+        nextArrow: false,
+        dots: false,
+    </#if>
+        infinite:true,
+        slidesToScroll: 1,
+        responsive: [
+        {
+            breakpoint: 1200,
+            settings: {
+            slidesToShow: 3,
+            }
+        },
+        {
+            breakpoint: 1000,
+            settings: {
+            slidesToShow: 2,
+            dots: true,
+            prevArrow: false,
+            nextArrow: false,
+            }
+        },
+        {
+            breakpoint: 670,
+            settings: {
+            slidesToShow: 1,
+            dots: true,
+            prevArrow: false,
+            nextArrow: false,
+            }
+        }
+        ]
+    });
+
+
+    
+    
+</script>
+
+
+
+
+
+
+<style>
+    /*.purpleback{
+        background-image: url("https://front-companies-uat.lfr.cloud/documents/35663/43407/fondo_ciudad.png/4785f199-a167-1745-a106-561aa612232c?t=1737654551519");
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }*/
+
+    .cint_prom{
+        position: absolute;
+        top: -30px;
+        padding: 5px 0px 10px;
+        width: 100%;
+        text-align: center;
+        border-radius: 5px;
+        font-weight: 700;
+        z-index: 1;
+    }
+
+    .tit_txt_w{
+        position: absolute;
+        bottom: 15px;
+        left: 25px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    .img_btn{
+        cursor: pointer;
+    }
+
+    .price-experience {
+        position: absolute;
+        bottom: 15px;
+        left: 20px;
+        background-color: #F2FF59;
+        padding: 9px 15px;
+        border-radius: 7px;
+        font-weight: 700;
+    }
+    .principal-city_${article_id} .buttonBuyNow {
+        color: #E11F2A;
+        text-decoration: none;
+        border: 2px solid #E11F2A;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        background-color: #fff;
+        font-size: 17px;
+        font-weight: 600;
+        border-radius: 10px;
+        display: block;
+        margin: 15px auto;
+    }
+    .principal-city_${article_id} .buttonBuyNow:hover {
+        color: #fff;
+        border: 2px solid #fff;
+        background-color: #E11F2A;
+    }
+
+    .principal-city_${article_id} h3{
+        font-size: 32px;
+        font-weight: 700;
+    }
+
+    .principal-city_${article_id} h5{
+        font-size: 16px;
+        font-weight: 700;
+        color: #566D77;
+    }
+
+    .txt_desc_bloq{
+        display: flex;
+    }
+
+    .txt_desc_bloq img{
+        height: 20px;
+        width: 20px;
+    }
+
+    .txt_desc_bloq div{
+        color: #566D77;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.3rem;
+        margin: 0px auto 14px 7px;
+    }
+
+    .bullet_img_cont{
+        width: 20px;
+        height: 20px;
+    }
+    .container_slide {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: calc(24px* 0.5);
+        padding-right: calc(24px* 0.5);
+        width: 90%;
+        max-width: 1140px;
+    }
+    .slick-track {
+        display: flex;
+        padding: 0 0px 40px 0;
+        box-sizing: border-box;
+    }
+
+    .principal-city_${article_id} #box_slide .element{
+        height: auto;
+        width: 100px;
+        color: #fff;
+        border-radius: 15px;
+        margin: 0px 10px;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: center;
+        -ms-flex-align: center;
+        background-color: #fff;
+        color: #000;
+        flex-flow: column wrap;
+        /* overflow: hidden; */
+        border: 1px solid #E3E3E3;
+        position: relative;
+    }
+
+    .principal-city_${article_id} #box_slide .slick-disabled {
+        opacity : 0; 
+        pointer-events:none;
+    }
+
+    .slick-slider {
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+
+    .principal-row {
+        position: relative;
+    }
+
+    .principal-row .image-float {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 175px;
+        height: 175px;
+        transition: all 0.7s ease-in-out;
+        position: absolute;
+    }
+
+    .principal-row .image-float-left {
+        left: -100px;
+        top: 200px;
+        z-index: 2;
+    }
+
+    .principal-row .image-float-right {
+        right: -50px;
+        top: -20px;
+        z-index: 2;
+    }
+
+    .principal-row .content {    
+        width: 100%;
+        color: #fff;
+        z-index: 3;
+        margin: 5% 1%;
+    }
+
+    .principal-row .content .title {
+        font-weight: 700;
+        font-family: 'GothamPro';
+    }
+
+    .principal-row .content .description {
+        font-size: 14px;
+        text-align: justify;
+        font-family: 'GothamPro';
+    }
+
+    .principal-row .content .col-button {
+        display: flex;
+        justify-content: end;
+        align-items: end;
+    }
+
+    .principal-row .content .see-all {
+        background-color: #fff;
+        padding: 15px 40px;
+        text-decoration: none;
+        color: #E11F2A;
+        font-size: 16px;
+        font-weight: 700;
+        border-radius: 10px;
+        border: solid 2px #fff;
+    }
+
+    .principal-row .content .see-all:hover {
+        background-color: #E11F2A;
+        color: #fff;
+        border: 2px solid #fff;
+    }
+
+    
+
+    .image {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 250px;
+        position: relative;
+        border-radius: 10px 10px 0px 0px;
+        z-index: 2;
+    }
+
+    .image .name-city {
+        position: absolute;
+        top: 30px;
+        left: 15px;
+        border: 2px solid #2889E1;
+        padding: 5px 10px;
+        border-radius: 10px;
+        background-color: #DBEAF8;
+        font-weight: 700;
+        text-align: start;
+    }
+
+    .content-slider {
+        padding: 20px;
+        font-family: 'GothamPro';
+    }
+
+    .content-slider .title-city {
+        font-weight: 700;
+        margin-bottom: 20px;
+    } 
+
+    .content-slider .description {
+        min-height: 100px;
+    } 
+
+    .content-slider .link-city {
+        text-decoration: none;
+        color: #E11F2A;
+        font-weight: 700;
+    }
+
+    .content-slider .link-city img{
+        display: inline;
+    }
+
+    .botones-slider {
+        height: 100px;
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .carrusel .slick-list{
+        padding-bottom: 50px!important;
+        padding-left:10px!important;
+    }
+    .carrusel .slick-dots li button {
+        font-size: 0;
+        line-height: 0;
+        display: block;
+        width: 20px;
+        height: 20px;
+        padding: 5px;
+        cursor: pointer;
+        color: #612066;
+        border: 0;
+        outline: 0;
+        background: 0 0;
+    }
+
+    .carrusel .slick-dots li button:before {
+        width: 14px;
+        height: 14px;
+        border: 1px solid var(--Black);
+        border-color: 1px solid var(--Black);
+        background-color: #612066;
+        border-radius: 50%;
+    }
+    .slick-dots li.slick-active button:before {
+        opacity: 1;
+        color: #612066;
+    }
+    .slick-dots li button:before {
+        font-size: 55px;
+    }
+
+    .slider_${article_id} .slick-prev, .botones-slider .prev_${article_id} {
+        background: url( ${left_slide} ) no-repeat;
+        background-size: 40px;
+        border-radius: 30%;
+        left: 39%;
+        width: 40px;
+        height: 40px;
+        top: initial;
+        bottom: -55px;
+        z-index: 2;
+    }
+    .slider_${article_id} .slick-next, .botones-slider .next_${article_id} {
+        background: url( ${next_slide} ) no-repeat;
+        background-size: 40px;
+        border-radius: 30%;
+        right: 39%;
+        width: 40px;
+        height: 40px;
+        top: initial;
+        bottom: -55px;
+        z-index: 2;
+    }
+    .carrusel .slick-dots {
+        bottom: 10px;
+        height: 1px;
+    }
+
+    .carrusel .box{
+        width:210px;
+        height:300px;
+        background: #FFFFFF;
+        border-radius: 8px;
+        margin:0 23px;
+        border: 1px solid #E1E3E9;
+    
+    }
+    
+    
+    .slider_${article_id} .element:hover {
+        transform: translate(0, -10px);
+        box-shadow: -1px 10px 10px 0px rgba(128,128,128,0.75);
+        -webkit-box-shadow: -1px 10px 10px 0px rgba(128,128,128,0.75);
+        -moz-box-shadow: -1px 10px 10px 0px rgba(128,128,128,0.75);
+    }
+
+
+    <#if (ImagenBanner.TipoDeFondo.getData())?? && ImagenBanner.TipoDeFondo.getData() !="">
+
+        <#if ImagenBanner.TipoDeFondo.getData() == "complet" >
+            
+            .principal-city_${article_id} .bkg_completo{
+                display: block;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 50%;
+                z-index: 1;
+                
+                <#if (ImagenBanner.getData())?? && ImagenBanner.getData() != "">
+                background: url(${ImagenBanner.getData()});
+                <#else>
+                background: #E11F2A;
+                </#if>
+                
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        
+        </#if>
+
+    </#if>
+
+
+    <#if (ImagenBanner.TipoDeFondo.getData())?? && ImagenBanner.TipoDeFondo.getData() !="">
+
+        <#if ImagenBanner.TipoDeFondo.getData() == "column" >
+            
+        .background-image {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+
+            <#if (ImagenBanner.getData())?? && ImagenBanner.getData() != "">
+            background: #5F2167 url(${ImagenBanner.getData()});
+            <#else>
+            background: #E11F2A;
+            </#if>
+
+            background-repeat: no-repeat;
+            background-size: 100%;
+            width: 100%;
+            height: 500px;
+            border-radius: 25px;
+            position: absolute;
+            z-index: 1;
+        }
+        
+        </#if>
+
+    </#if>
+
+
+
+ <#-- comentamos estos estilos para cambiarlos por las otras flechas
+    .botones-slider .prev_${article_id},
+    .botones-slider .next_${article_id} {
+        display: contents !important;
+    }
+
+    .prev_${article_id}:after, .swiper-rtl .next_${article_id}:after {
+        content: '<';
+    }
+    .next_${article_id}:after, .swiper-rtl .prev_${article_id}:after {
+        content: '>';
+    }
+
+    .botones-slider .prev_${article_id}::after,
+    .botones-slider .next_${article_id}::after {
+        color: #000;
+        width: 100px;
+        text-align: center;
+        background-color: #fff;
+        border: 1px solid #E1E3E9;
+        padding: 10px 20px;
+        font-size: 25px;
+    }
+
+    .botones-slider .prev_${article_id}::after {
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+    }
+
+    .botones-slider .next_${article_id}::after {
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+    --> 
+
+
+    
+
+    @media only screen and (min-width: 1280px) {        
+        .principal-row .content .see-all {
+            padding: 15px 25px;
+            font-size: 14px;
+        }
+    }
+
+    @media only screen and (min-width: 992px) {       
+        .principal-row .content .see-all {
+            padding: 10px 10px;
+            font-size: 11px;
+            margin-right: 5%;
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+        
+        .principal-city_${article_id} h3{
+            font-size: 18px;
+            font-weight: 700;
+        }
+        
+    }
+    @media only screen and (max-width: 600px){
+        .principal-row .content {
+            padding: 5%;
+        }
+    }
+
+    
+</style>

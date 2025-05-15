@@ -1,0 +1,90 @@
+<style>
+    #gal-masonry{
+        padding-top: 112px;
+        padding-bottom: 112px;
+        background-color: #F4F6F9;
+    }
+    #gal-masonry .titles{
+        font-family: 'GothamPro-Bold', Arial, Helvetica, sans-serif;
+    }
+    .grid-gallery {
+        display: grid;
+        grid-auto-rows: 200px;
+        gap: 1rem;
+        grid-auto-flow: row dense;
+    }
+    @media all and (min-width: 320px) {
+        .grid-gallery {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    @media all and (min-width: 768px) {
+        .grid-gallery {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    @media all and (min-width: 1024px) {
+        .grid-gallery {
+            grid-template-columns: repeat(6, 1fr);
+        }
+    }
+    .grid-gallery__item:nth-child(11n+1) {
+        grid-column: span 1;
+    }
+    .grid-gallery__item:nth-child(11n+4) {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+    .grid-gallery__item:nth-child(11n+6) {
+        grid-column: span 3;
+        grid-row: span 1;
+    }
+    .grid-gallery__item:nth-child(11n+7) {
+        grid-column: span 1;
+        grid-row: span 2;
+    }
+
+    .grid-gallery__item:nth-child(11n+8) {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .grid-gallery__item:nth-child(11n+9) {
+        grid-row: span 3;
+    }
+
+    .grid-gallery__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+</style>
+
+<div class="container-fluid" id="gal-masonry">
+    <div class="container-lg">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="titles fpurple mb-3">
+                    <#if (titulo.getData())??>
+                        ${titulo.getData()}
+                    </#if>
+                </h1>
+                <p class="ptxt">
+                    <#if (descripcion.getData())??>
+                        ${descripcion.getData()}
+                    </#if>
+                </p>
+            </div>
+            
+            <div class="col-12 mt-3">
+                <div class="grid-gallery">
+                    <#list DocumentLibrary65493208.getSiblings() as cur_DocumentLibrary65493208>
+                        <a href="" class="grid-gallery__item">
+                            <img src="${cur_DocumentLibrary65493208.getData()}" class="grid-gallery__image" alt="">                            
+                        </a>
+                    </#list>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

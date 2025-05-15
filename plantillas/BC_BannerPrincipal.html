@@ -1,0 +1,88 @@
+<link rel="stylesheet" href="/documents/d/smi/aos">
+<script src="/documents/d/smi/aos-1"></script>
+
+<style>
+    .banner-girl-home{
+        height: 600px;
+        background-image: url("${Imagen.getData()}");
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+    }
+    .gestiona{
+        margin-top: -35px;
+    }
+    
+    @media(max-width: 767px){
+        .titles1{
+            font-size: 32px;
+            line-height: 38.4px;
+        }
+        .titles3{
+            font-size: 24px;
+            line-height: 28.8px;
+        }
+        .bannerHome{
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        .banner-girl-home{
+            height: 300px;
+            background-size: auto 100%;
+        }
+       .gestiona{
+            margin-top: -60px;
+        } 
+    }
+    
+    @media(min-width: 768px) and (max-width: 992px){
+        .banner-girl-home{
+            height: 400px;
+            background-size: cover;
+        }
+        .gestiona{
+            margin-top: -60px;
+        } 
+    }
+    @media(min-width: 768px) and (max-width: 992px) and (orientation: landscape){
+        .banner-girl-home{
+            height: 401px;
+            background-size: cover;
+        }
+        .gestiona{
+            margin-top: -70px;
+        } 
+    }
+    @media(min-width: 993px) and (max-width: 1200px){
+        .banner-girl-home{
+            height: 401px;
+            background-size: cover;
+        }
+        .gestiona{
+            margin-top: -70px;
+        } 
+    }
+</style>
+
+
+<section class="container-fluid mb-4">
+    <div class="row">
+        <div class="col-12 col-lg-12 banner-girl-home"> </div>
+    </div>
+    
+    <div class="container-lg">
+        <div class="row">
+            <div class="col-12 col-lg-12 faback gestiona shadow rounded-lg py-4 px-3 px-sm-5" data-aos="fade-up">
+                <h1 class="fpurple titles1 text-center text-lg-left">${Titulo.getData()}</h1>
+                <p class="fdark text-center text-lg-left">${Descripcion.getData()}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<script>
+    AOS.init();
+</script>

@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="/documents/d/smi/aos">
+<script src="/documents/d/smi/aos-1"></script>
+
+<style>
+    .rec_graficos{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${ImagenDestacada.getData()}");
+        background-size: cover;
+        background-position: right center;
+        background-attachment: scroll;
+        background-repeat: no-repeat;
+        color: var(--black);
+        height: 370px;
+    }
+    .rec_graficos .row,
+    .rec_graficos.col-lg-6{
+        height: 100%;
+    }
+    .rec_graficos .ptxt{
+        font-weight: 200;
+    }
+    @media(max-width: 767px){
+        .rec_graficos{
+            background-position: center;
+        }
+        .rec_graficos{
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+</style>
+
+
+<section class="container-fluid rec_graficos mt-4">
+    <div class="row d-flex align-items-center justify-content-start">
+        <div class="col-lg-6 offset-lg-1 col-12">
+            <div>
+                <h2 class="titles3 fwhite" data-aos="fade-down" data-aos-duration="1000">${Titulo.getData()}</h2>
+                <p class="ptxt fwhite mt-3" data-aos="fade-right" data-aos-duration="1300">${Descripcion.getData()}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    AOS.init();
+</script>

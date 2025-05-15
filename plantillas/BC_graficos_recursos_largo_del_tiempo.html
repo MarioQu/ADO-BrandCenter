@@ -1,0 +1,59 @@
+<style>
+    #actual_manuales .btn{
+        width: 170px;
+    }
+    #actual_manuales .whitebtn{
+        width: 170px;
+    }
+    #actual_manuales .divider{
+        width: 2px;
+    }
+    #actual_manuales .row-actualizaciones:last-child .divider{
+        display: none !important;
+    }
+    @media(max-width: 767px){
+        .btn{
+            width: 100% !important;
+        }
+        .purplebtn{
+            margin-bottom: 20px;
+        }
+    }
+</style>
+
+<div class="container-fluid mt-5 mb-4" id="actual_manuales">
+    <div class="container-lg">
+        <div class="row">
+            <div class="col-lg-6 col-12">
+                <p class="subtitles fred">${Subtitulo.getData()}</p>
+                <h2 class="fpurple titles1" data-aos="fade-up" data-aos-duration="1200">${Titulo.getData()}</h2>
+                
+                <p class="mt-4">
+                    <a href="${LinkBotonVerMas.getData()}" target="_self" class="btn purplebtn mr-4" data-aos="fade-up" data-aos-duration="1200">${TextoBotonVerMas.getData()}</a>
+                    <a href="${LinkBotonDescargar.getData()}" target="_self" class="btn whitebtn" data-aos="fade-down" data-aos-duration="1400">${TextoBotonDescargar.getData()}</a>
+                </p>
+            </div>
+            
+            <div class="col-lg-6 col-12 mt-4 mt-md-0">
+                <#assign counter = 1200>
+                <#if Actualizacion.getSiblings()?has_content>
+                    <#list Actualizacion.getSiblings() as cur_Actualizacion>
+                        <div class="row mb-3 row-actualizaciones" data-aos="fade-up" data-aos-duration="${counter}">
+                            <div class="col-lg-1 col-2 p-2 p-md-0 d-flex flex-column align-items-center justify-content-start">
+                                <img src="${cur_Actualizacion.Icono.getData()}" class="img-fluid" alt="">
+                                <img src="https://front-smi-dev.lfr.cloud/webdav/smi/document_library/Iconos/Divider.png" alt="" class="divider mt-2">
+                            </div>
+                            <div class="col-lg-11 col-10">
+                                <h3 class="fpurple subtitles">${cur_Actualizacion.TituloActualizacion.getData()}</h3>
+                                <p class="ptxt4 mt-2">
+                                    ${cur_Actualizacion.Descripcion.getData()}
+                                </p>
+                            </div>
+                        </div>
+                    </#list>
+                    <#assign counter = counter + 300>
+                </#if>           
+            </div>
+        </div>
+    </div>
+</div>

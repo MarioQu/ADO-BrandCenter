@@ -1,0 +1,45 @@
+<style>
+    #pasos_utilizar .cont_pasos{
+        border-radius: 16px;
+    }
+    @media(max-width: 767px){
+        #pasos_utilizar{
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        #pasos_utilizar img{
+            display: none;
+        }
+    }
+</style>
+
+<section class="container-fluid">
+    <div class="container-lg pt-5" id="pasos_utilizar">   
+        <div class="row">
+            <div class="col-12 p-5 px-3 px-md-5 purpleback cont_pasos myborder">
+                <h2 class="fwhite titles3">${Titulo.getData()}</h2>
+                
+                <div class="row mt-4">
+                    <div class="col-12 col-sm-5 col-lg-4">
+                        <img src="${Imagen.getData()}" class="img-fluid w-100" alt="" data-aos="fade-right" data-aos="1300">
+                    </div>
+                    <div class="col-12 col-sm-7 col-lg-8">
+                        <h3 class="fwhite subtitles mb-2" data-aos="fade-up" data-aos="1300">${Subtitulo1.getData()}</h3>
+                        <p class="fwhite ptxt3" data-aos="fade-down" data-aos="1600">
+                            ${Descripcion1.getData()}
+                        </p>
+                        <p>
+                            <a href="${LinkBoton.getData()}" target="_blank" class="btn redbtn px-3" data-aos="fade-up" data-aos="1900">${TextoBoton.getData()}</a>
+                        </p>
+                        
+                        <h3 class="fwhite subtitles mt-5 mb-2" data-aos="fade-up" data-aos="1300">${Subtitulo2.getData()}</h3>
+                        <p class="fwhite ptxt3" data-aos="fade-down" data-aos="1600">
+                            ${Descripcion2.getData()}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
