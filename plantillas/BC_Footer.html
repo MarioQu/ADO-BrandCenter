@@ -1,0 +1,187 @@
+<style>
+    .portlet {
+        margin-bottom: 0;
+    }
+    .ptxt3{
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14.4px;
+    }
+    #footer-landing .subtitles{
+        font-family: "GothamPro";
+        font-size: 14px;
+        line-height: 19.2px;
+    }
+    .fwhite{
+        color: var(--white);   
+    }
+    .inicio{
+        background-color: #263238;
+        text-align: center;
+        font-family: 'GothamPro';
+        padding: 3px 0px;
+    }
+    .inicio a{
+        color: #fff;
+        font-weight: bold;
+        font-size: 13px;
+        text-decoration: none;
+    }
+    #footer-landing{
+        background-color: #373A43;
+    }
+    #footer-landing .logo{
+        width: 140px;
+    }
+    #footer-landing ul{
+        list-style-type: none;
+    }
+    #footer-landing ul li::marker{
+        color: #fff;
+    }
+    #footer-landing ul li a{
+        text-decoration: none;
+        font-size: 12px;
+    }
+    #footer-landing ul li a:hover{
+        color: var(--red);
+    }
+    .ptxt3{
+        line-height: 18px;
+    }
+    .list-legales-footer {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    .subm a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 12px;
+    }
+    .list-legales-footer li:first-child::after {
+        content: "|";
+        margin-left: 10px;
+        margin-right: 10px;
+        color: #fff;
+    }
+    .list-legales-footer li a:hover{
+        color: #E11F2A;
+    }
+    .b-final{
+        background-color: #64186D;
+        color: #fff;
+        font-size: 12px;
+        padding: 5px 0px;
+    }
+
+    .b-final a{
+        color: #fff;
+        text-decoration: none;
+        font-family: 'GothamPro';
+    }
+</style>
+
+
+<div class="inicio">
+    <p class="mt-2"><a href="#top">Inicio de Página</a></p>
+</div>
+
+<section class="container-fluid">
+    <div class="row py-4" id="footer-landing">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="row">
+                <div class="col-lg-3 text-center text-sm-center text-lg-left pb-4 pb-sm-4 pb-md-4 pb-lg-0">
+                    <h3 class="subtitles fwhite mb-2">${Fieldset19016427.Campo90892168.getData()}</h3>
+					<ul class="p-0 m-0">
+                        <#if Fieldset19016427.Campo79205962.getSiblings()?has_content>
+                            <#list Fieldset19016427.Campo79205962.getSiblings() as cur_Fieldset19016427_Campo79205962>
+                                <#if (Fieldset19016427.Campo79205962.Campo86602951.getData())??>
+                                    <li class="mb-2">
+                                        <a href="${cur_Fieldset19016427_Campo79205962.Campo56320057.getData()}" target="_blank" class="fwhite">
+                                            ${cur_Fieldset19016427_Campo79205962.Campo86602951.getData()}
+                                        </a>
+                                    </li>
+                                </#if>
+                            </#list>
+                        </#if>
+                    </ul>							
+                </div>
+                
+                <div class="col-lg-3 text-center text-sm-center text-lg-left pb-4 pb-sm-4 pb-md-4 pb-lg-0">
+                    <h3 class="subtitles fwhite mb-2">${Fieldset30751427.titulocol2.getData()}</h3>
+                    <ul class="p-0 m-0">
+                        <#if Fieldset30751427.Fieldset01446006.getSiblings()?has_content>
+                            <#list Fieldset30751427.Fieldset01446006.getSiblings() as cur_Fieldset30751427_Fieldset01446006>
+                                <#if (Fieldset30751427.Fieldset01446006.txtlist.getData())??>
+                                    <li class="mb-2">
+                                        <a href="${cur_Fieldset30751427_Fieldset01446006.linklista.getData()}" target="_blank" class="fwhite">${cur_Fieldset30751427_Fieldset01446006.txtlist.getData()}</a>
+                                    </li>
+                                </#if>
+                            </#list>
+                        </#if>                    
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 text-center text-sm-center text-lg-left pb-4 pb-sm-4 pb-md-4 pb-lg-0">
+                    <h3 class="subtitles fwhite mb-2">${Campo75306964.titcol3.getData()}</h3>
+                    <img src="${Campo75306964.DocumentLibrary60886555.getData()}" class="img-fluid w-50" alt="">
+                </div>
+                
+                <div class="col-lg-3 px-5 px-md-4 px-lg-0 text-center text-sm-center text-lg-left">
+                    <h3 class="subtitles fwhite mb-2">${Campo61555247.titcol4.getData()}</h3>
+                    <!-- <p class="fwhite ptxt3">
+                        ${Campo61555247.descripcion2.getData()}
+                    </p> -->
+                    <p>
+                        <a href="https://www.facebook.com/mobilityado/" target="_blank">
+                            <img src="/documents/d/mobilityado/facebook" class="img-social-footer">
+                        </a>
+                        <a href="https://x.com/mobilityado" target="_blank">
+                            <img src="/documents/d/mobilityado/x" class="img-social-footer">
+                        </a>
+                        <a href="https://www.youtube.com/@mobility_ado" target="_blank">
+                            <img src="/documents/d/mobilityado/youtube" class="img-social-footer">
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        
+        <hr style="border-top: 1px solid #ccc; width: 100%;">
+        <div class="container subm py-4" style="text-align: center;">
+            <p><img style="max-width: 150px;" src="/documents/d/mobilityado/mobility-ado-logo"></p>
+            
+            <div class="row mt-3">
+                <div class="col-12">
+                    <ul class="list-legales-footer d-flex align-items-center justify-content-center">                    
+                        <li>
+                            <a href="${avisoprivacidad.getData()}" target="_blank">Aviso de Privacidad</a>
+                        </li>
+                        <li>
+                            <a href="${terminosycondiciones.getData()}" target="_blank">Términos y Condiciones</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="b-final">
+    <div class="container py-3">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-8 text-center text-sm-center text-md-center text-lg-left">
+                <#if (copyright.getData())??>
+                    ${copyright.getData()}
+                </#if>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-4 text-center text-sm-center text-md-center text-lg-right text-uppercase">
+                <#if (footer_enterprise.getData())??>
+                    ${footer_enterprise.getData()}
+                </#if>
+            </div>
+        </div>
+    </div>
+</div>
