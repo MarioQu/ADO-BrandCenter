@@ -1,0 +1,32 @@
+<style>
+    #mainbanner-assets{
+        background-image: url("${ImagenDestacada.getData()}");
+        background-attachment: scroll;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 300px;
+    }
+    .red-subtitle{
+        background-color: var(--red);
+        display: inline-block;
+    }
+</style>
+
+<section class="container-fluid" id="mainbanner-assets">
+    <div class="container-lg d-flex align-items-center h-100">        
+        <div>
+            <p class="red-subtitle ptxt3 fwhite py-2 px-3 mb-2">
+                <#if (Descripcion.getData())??>
+                    ${Descripcion.getData()}
+                </#if>
+            </p>
+            
+            <h1 class="titles1 fwhite">
+                <#if (Titulo.getData())??>
+                    ${Titulo.getData()}
+                </#if>
+            </h1>     
+        </div>   
+    </div>
+</section>

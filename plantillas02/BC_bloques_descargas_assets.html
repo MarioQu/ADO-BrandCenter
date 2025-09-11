@@ -1,0 +1,358 @@
+<style>
+    .assets-container .card-body{
+        height: 140px;
+    }
+    .assets-container .card .cont-image{
+        background-color: #1A1A1A;
+        text-align: center;
+        height: 235px; 
+    }
+    .assets-container .redbtn{
+        position: absolute;
+        bottom: 0;
+        width: 90% !important;
+        left: 5% !important;
+        bottom: 15px !important;
+    }
+    .assets-container .title{
+        font-family: 'GothamPro', Arial, Helvetica, sans-serif;
+        font-size: 32px;
+    }
+    .assets-container .rowHead{
+        border-bottom: 1px solid #EDEDED;
+    }
+    .dropdown-assets{
+        background-color: var(--red);
+        font-size: 14px; 
+        color: var(--white) !important;
+    }
+    .titleAsset{
+        font-family: 'GothamPro', Arial, Helvetica, sans-serif;
+    }
+    video{
+        width: 100% !important;
+    }
+    video::-internal-media-controls-download-button,
+    video::-webkit-media-controls-fullscreen-button{
+        display: none !important;
+    }
+    video::-webkit-media-controls-enclosure {
+        overflow: hidden;
+    }
+</style>
+
+
+<!-- Logotipos -->
+<section class="container-fluid assets-container">
+    <div class="container-lg">
+        <div class="row rowHead mb-4">
+            <div class="col-lg-8">
+                <h2 class="title fdark3">
+                    <#if (seccion.getData())??>
+                        ${seccion.getData()}
+                    </#if>
+                </h2>
+            </div>
+            <div class="col-lg-4 text-right">
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle dropdown-assets" type="button" data-toggle="dropdown" aria-expanded="false">
+                        Descargar Editables
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/documents/d/mobilityado/mobilityadociudades_marcacompleta-eps" target="_blank" download>Marca Completa EPS</a>
+                        <a class="dropdown-item" href="/documents/d/mobilityado/mobilityadociudades_marcacompleta-ai" target="_blank" download>Marca Completa AI</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="cont-image d-flex align-items-center justify-content-center px-4">
+                        <img src="/documents/d/mobilityado/mobilityadociudades_marcaprincipal_negativo" alt="" class="img-fluid w-100">
+                    </div>                    
+                    <div class="card-body">
+                        <p class="ptxt2 fdark3 titleAsset">Marca Principal Negativo</p>
+                        <a href="/documents/d/mobilityado/mobilityadociudades_marcaprincipal_negativo" target="_blank" download class="btn redbtn w-100">Descargar</a>
+                    </div>
+                </div>
+            </div><!-- /col -->
+            
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="cont-image d-flex align-items-center justify-content-center px-4">
+                        <img src="/documents/d/mobilityado/mobilityadociudades_marcaprincipal_positivo" alt="" class="img-fluid w-100">
+                    </div>  
+                    <div class="card-body">
+                        <p class="ptxt2 fdark3 titleAsset">Marca Principal Positivo</p>
+                        <a href="/documents/d/mobilityado/mobilityadociudades_marcaprincipal_positivo" target="_blank" download class="btn redbtn w-100">Descargar</a>
+                    </div>
+                </div>
+            </div><!-- /col -->
+            
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="cont-image d-flex align-items-center justify-content-center px-4">
+                        <img src="/documents/d/mobilityado/mobilityadociudades_marcaprincipal_monotinta" alt="" class="img-fluid w-100">
+                    </div>  
+                    <div class="card-body">
+                        <p class="ptxt2 fdark3 titleAsset">Marca Principal Monotinta</p>
+                        <a href="/documents/d/mobilityado/mobilityadociudades_marcaprincipal_monotinta" target="_blank" download class="btn redbtn w-100">Descargar</a>
+                    </div>
+                </div>
+            </div><!-- /col -->
+            
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="cont-image d-flex align-items-center justify-content-center px-4">
+                        <img src="/documents/d/mobilityado/mobilityadociudades_marcaintegrada_negativo" alt="" class="img-fluid w-100">
+                    </div>  
+                    <div class="card-body">
+                        <p class="ptxt2 fdark3 titleAsset">Marca Integrada Negativo</p>
+                        <a href="/documents/d/mobilityado/mobilityadociudades_marcaintegrada_negativo" target="_blank" download class="btn redbtn w-100">Descargar</a>
+                    </div>
+                </div>
+            </div><!-- /col -->
+            
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="cont-image d-flex align-items-center justify-content-center px-4">
+                        <img src="/documents/d/mobilityado/mobilityadociudades_marcaintegrada_positivo" alt="" class="img-fluid w-100">
+                    </div>  
+                    <div class="card-body">
+                        <p class="ptxt2 fdark3 titleAsset">Marca Integrada Positivo</p>
+                        <a href="/documents/d/mobilityado/mobilityadociudades_marcaintegrada_positivo" target="_blank" download class="btn redbtn w-100">Descargar</a>
+                    </div>
+                </div>
+            </div><!-- /col -->
+            
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="cont-image d-flex align-items-center justify-content-center px-4">
+                        <img src="/documents/d/mobilityado/mobilityadociudades_marcaprincipal_monotinta" alt="" class="img-fluid w-100">
+                    </div> 
+                    <div class="card-body">
+                        <p class="ptxt2 fdark3 titleAsset">Marca Principal Monotinta</p>
+                        <a href="/documents/d/mobilityado/mobilityadociudades_marcaprincipal_monotinta" target="_blank" download class="btn redbtn w-100">Descargar</a>
+                    </div>
+                </div>
+            </div><!-- /col -->
+        </div>
+    </div>
+</section>
+
+
+<!-- Manuales y Guías -->
+<section class="container-fluid assets-container mt-5">
+    <div class="container-lg">
+        <div class="row rowHead mb-4">
+            <div class="col-lg-8">
+                <h2 class="title fdark3">
+                    Manuales & Guías
+                </h2>
+            </div>
+            <div class="col-lg-4 text-right">
+                
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="cont-image d-flex align-items-center justify-content-center px-4">
+                        <img src="/documents/d/mobilityado/pdf-icon" alt="" class="w-50">
+                    </div> 
+                    <div class="card-body">
+                        <p class="ptxt2 fdark3 mb-1 titleAsset">Marca Completa</p>
+                        <p class="ptxt3 text-muted mb-1">Versión 1</p>
+                        <p class="ptxt3 fblack">Archivo PDF</p>
+                        <a href="/documents/d/mobilityado/mobilityadociudades_marcacompleta-pdf" target="_blank" download class="btn redbtn w-100">Descargar</a>
+                    </div>
+                </div>
+            </div><!-- /col -->
+            
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="cont-image d-flex align-items-center justify-content-center px-4">
+                        <img src="/documents/d/mobilityado/pdf-icon" alt="" class="w-50">
+                    </div> 
+                    <div class="card-body">
+                        <p class="ptxt2 fdark3 mb-1 titleAsset">Manual de Sellos Operativos Urbanos</p>
+                        <p class="ptxt3 text-muted mb-1">Versión 5</p>
+                        <p class="ptxt3 fblack">Archivo PDF</p>
+                        <a href="/documents/d/mobilityado/manual-de-sellos-operativos-_v5-pdf" target="_blank" download class="btn redbtn w-100">Descargar</a>
+                    </div>
+                </div>
+            </div><!-- /col -->
+        </div>
+    </div>
+</section>
+
+
+<!-- Audiovisuales -->
+<section class="container-fluid assets-container mt-5">
+    <div class="container-lg">
+        <div class="row rowHead mb-4">
+            <div class="col-lg-9">
+                <h2 class="title fdark3">
+                    Audiovisuales
+                </h2>
+            </div>
+            <div class="col-lg-3 text-right">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Buscar">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Título</div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="cont-image d-flex align-items-center justify-content-center">
+                        <video src="/documents/d/mobilityado/video_de_marca_vayven__mobility-ado_ciudades#t=2" controls controlsList="nodownload nofullscreen"></video>
+                    </div> 
+                    <div class="card-body">
+                        <p class="ptxt2 fdark3 mb-1 titleAsset">VIDEO DE MARCA VAYVEN MOBILITY ADO_CIUDADES</p>
+                        <p class="ptxt3 text-muted mb-1">Versión 1 - Formato MP4 - 237,8 MB</p>
+                        <a href="/documents/d/mobilityado/video_de_marca_vayven__mobility-ado_ciudades" target="_blank" download class="btn redbtn w-100">Descargar</a>
+                    </div>
+                </div>
+            </div><!-- /col -->
+            
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="cont-image d-flex align-items-center justify-content-center">
+                        <video src="/documents/d/mobilityado/atributos_vayven_mobility-ado_ciudades#t=4" controls controlsList="nodownload nofullscreen"></video>
+                    </div>                    
+                    <div class="card-body">
+                        <p class="ptxt2 fdark3 mb-1 titleAsset">ATRIBUTOS VAYVEN MOBILITY ADO_CIUDADES</p>
+                        <p class="ptxt3 text-muted mb-1">Versión 1 - Formato MP4 - 265,3 MB</p>
+                        <a href="/documents/d/mobilityado/atributos_vayven_mobility-ado_ciudades" target="_blank" download class="btn redbtn w-100">Descargar</a>
+                    </div>
+                </div>
+            </div><!-- /col -->
+            
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="cont-image d-flex align-items-center justify-content-center">
+                        <video src="/documents/d/mobilityado/mb-electrico_mobility-ado_ciudades#t=3" controls controlsList="nodownload nofullscreen"></video>
+                    </div>
+                    <div class="card-body">
+                        <p class="ptxt2 fdark3 mb-1 titleAsset">MB Eléctrico MOBILITY ADO CIUDADES</p>
+                        <p class="ptxt3 text-muted mb-1">Versión 1 - Formato MP4 - 160 MB</p>
+                        <a href="/documents/d/mobilityado/mb-electrico_mobility-ado_ciudades" target="_blank" download class="btn redbtn w-100">Descargar</a>
+                    </div>
+                </div>
+            </div><!-- /col -->
+            
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="cont-image d-flex align-items-center justify-content-center">
+                        <video src="/documents/d/mobilityado/electromovilidad_mobility-ado_ciudades#t=3" controls controlsList="nodownload nofullscreen"></video>
+                    </div>
+                    <div class="card-body">
+                        <p class="ptxt2 fdark3 mb-1 titleAsset">Electromovilidad MOBILITY ADO CIUDADES</p>
+                        <p class="ptxt3 text-muted mb-1">Versión 1 - Formato MP4 - 139,7 MB</p>
+                        <a href="/documents/d/mobilityado/electromovilidad_mobility-ado_ciudades" target="_blank" download class="btn redbtn w-100">Descargar</a>
+                    </div>
+                </div>
+            </div><!-- /col -->
+            
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="cont-image d-flex align-items-center justify-content-center">
+                        <video src="/documents/d/mobilityado/uitp-hamburgo-2025-esp-v2#t=5" controls controlsList="nodownload nofullscreen"></video>
+                    </div>
+                    <div class="card-body">
+                        <p class="ptxt2 fdark3 mb-1 titleAsset">UITP-Hamburgo 2025 ESP</p>
+                        <p class="ptxt3 text-muted mb-1">Versión 2 - Formato MP4 - 228M</p>
+                        <a href="/documents/d/mobilityado/uitp-hamburgo-2025-esp-v2" target="_blank" download class="btn redbtn w-100">Descargar</a>
+                    </div>
+                </div>
+            </div><!-- /col -->
+            
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="cont-image d-flex align-items-center justify-content-center">
+                        <video src="/documents/d/mobilityado/uitp-hamburgo-2025-esp-v2#t=2" controls controlsList="nodownload nofullscreen"></video>
+                    </div>
+                    <div class="card-body">
+                        <p class="ptxt2 fdark3 mb-1 titleAsset">MOBILTY ADO CIUDADES_Inglés 2025_Alta</p>
+                        <p class="ptxt3 text-muted mb-1">Versión 2 - Formato MP4 - 239.4M</p>
+                        <a href="/documents/d/mobilityado/uitp-hamburgo-2025-esp-v2" target="_blank" download class="btn redbtn w-100">Descargar</a>
+                    </div>
+                </div>
+            </div><!-- /col -->
+        </div>
+    </div>
+</section>
+
+
+<!-- Fotografías -->
+<section class="container-fluid assets-container my-5">
+    <div class="container-lg">
+        <div class="row rowHead mb-4">
+            <div class="col-lg-9">
+                <h2 class="title fdark3">
+                    Fotografías
+                </h2>
+            </div>
+            <div class="col-lg-3 text-right">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Buscar">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Título</div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-header ptxt3 fblack">
+                        11/12/2023
+                    </div>
+                    <img src="/documents/d/mobilityado/image" alt="" class="img-fluid w-100">
+                    <div class="card-body">
+                        <p class="ptxt2 fdark3 mb-1 titleAsset">Título Video</p>
+                        <p class="ptxt3 text-muted mb-1">Versión 2 - Formato (MP4, WEBM, etc.)</p>
+                        <a href="#" target="_blank" download class="btn redbtn w-100">Descargar</a>
+                    </div>
+                </div>
+            </div><!-- /col -->
+            
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-header ptxt3 fblack">
+                        11/12/2023
+                    </div>
+                    <img src="/documents/d/mobilityado/image" alt="" class="img-fluid w-100">
+                    <div class="card-body">
+                        <p class="ptxt2 fdark3 mb-1 titleAsset">Título Video</p>
+                        <p class="ptxt3 text-muted mb-1">Versión 2 - Formato (MP4, WEBM, etc.)</p>
+                        <a href="#" target="_blank" download class="btn redbtn w-100">Descargar</a>
+                    </div>
+                </div>
+            </div><!-- /col -->
+            
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-header ptxt3 fblack">
+                        11/12/2023
+                    </div>
+                    <img src="/documents/d/mobilityado/image" alt="" class="img-fluid w-100">
+                    <div class="card-body">
+                        <p class="ptxt2 fdark3 mb-1 titleAsset">Título Video</p>
+                        <p class="ptxt3 text-muted mb-1">Versión 2 - Formato (MP4, WEBM, etc.)</p>
+                        <a href="#" target="_blank" download class="btn redbtn w-100">Descargar</a>
+                    </div>
+                </div>
+            </div><!-- /col -->
+        </div>
+    </div>
+</section>

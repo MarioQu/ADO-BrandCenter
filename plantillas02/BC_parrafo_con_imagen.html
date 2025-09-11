@@ -1,0 +1,43 @@
+<style>
+    .dinamyc_row{
+        <#if (GrupoCamposImagen.PosicionImagen.getData()) == "izquierda">
+            flex-direction: row;
+        <#else>
+            flex-direction: row-reverse;
+        </#if>
+    }
+    #parrafo_texto p{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19.2px;
+    }
+</style>
+
+<section class="container-fluid my-5" id="parrafo_texto">
+    <div class="container-lg">
+        <div class="row dinamyc_row d-flex align-items-center">
+            <div class="col-lg-6">
+                <img src="${GrupoCamposImagen.ImagenPrincipal.getData()}" alt="" class="img-fluid">
+            </div>
+            
+            <div class="col-lg-6">
+                <#if (subtitulo.getData())??>
+                    <p class="p-txt4 fred mb-2">                    
+                        ${subtitulo.getData()}                    
+                    </p>
+                </#if>
+                
+                <#if (titulo.getData())??>
+                    <h2 class="titles1 fpurple">                    
+                        ${titulo.getData()}                    
+                    </h2> 
+                </#if>    
+                
+            
+                <#if (TextoPrincipal.getData())??>
+                    ${TextoPrincipal.getData()}
+                </#if>
+            </div>
+        </div>
+    </div>
+</section>
