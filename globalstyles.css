@@ -1,27 +1,24 @@
 /* Estilos de fuentes */
 @font-face {
-    font-family: 'GothamPro', Arial, Helvetica, sans-serif;
-    src: url('/documents/4523463/5076337/GothamPro.woff');
+    font-family: 'Montserrat-Regular', Arial, Helvetica, sans-serif;
+    src: url('/documents/d/mobilityado/montserrat-regular');
     font-weight: 400 !important;
 }
 @font-face {
-    font-family: 'GothamPro-Light', Arial, Helvetica, sans-serif;
-    src: url('/documents/4523463/5076337/GothamPro-Light.woff');
+    font-family: 'Montserrat-Light', Arial, Helvetica, sans-serif;
+    src: url('/documents/d/mobilityado/montserrat-light');
 }
 @font-face {
-    font-family: 'GothamPro-Bold', Arial, Helvetica, sans-serif;
-    src: url('/documents/4523463/5076337/GothamPro-Bold.woff');
+    font-family: 'Montserrat-Bold', Arial, Helvetica, sans-serif;
+    src: url('/documents/d/mobilityado/montserrat-bold');
 }
 
 body,
 body #content{
-    font-family: 'GothamPro-Light', Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat-Regular', Arial, Helvetica, sans-serif;
 }
 strong{
-    font-family: 'GothamPro-Bold', Arial, Helvetica, sans-serif;
-}
-.portlet-decorate .portlet-content {
-background: transparent;
+    font-family: 'Montserrat-Bold', Arial, Helvetica, sans-serif;
 }
 
 /* Estilos generales */
@@ -71,30 +68,30 @@ background: transparent;
     color: var(--dark3);
 }
 .titles1{
-    font-family: 'GothamPro-Bold', Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat-Bold', Arial, Helvetica, sans-serif;
     font-size: 40px;
     line-height: 48px
 }
 .titles2{
-    font-family: 'GothamPro-Bold', Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat-Bold', Arial, Helvetica, sans-serif;
     font-weight: 700;
     font-size: 24px;
     line-height: 28.8px;
 }
 .titles3{
-    font-family: 'GothamPro-Bold', Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat-Bold', Arial, Helvetica, sans-serif;
     font-weight: 700;
     font-size: 32px;
     line-height: 38.4px;
 }
 .titles4{
-    font-family: 'GothamPro-Bold', Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat-Bold', Arial, Helvetica, sans-serif;
     font-weight: 700;
     font-size: 18px;
     line-height: 21.6px;
 }
 .subtitles{
-    font-family: 'GothamPro-Bold', Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat-Bold', Arial, Helvetica, sans-serif;
     font-weight: 700;
     font-size: 16px;
     line-height: 19.2px;

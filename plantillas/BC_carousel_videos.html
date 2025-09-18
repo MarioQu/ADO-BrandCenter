@@ -1,8 +1,8 @@
-<#assign slick_css                = "/documents/4523468/4624446/slick.css" >
-<#assign slick_theme                = "/documents/4523468/4624446/slick-theme.css" >
-<#assign slick_js                = "/documents/4523468/4624446/slick.min.js" >
-<#assign left_slide                = "/documents/4523468/4634630/left-slide.png" >
-<#assign next_slide                = "/documents/4523468/4634630/next-slide.png" >
+<#assign slick_css                = "/documents/d/mobilityado/slick" >
+<#assign slick_theme                = "/documents/d/mobilityado/slick-theme" >
+<#assign slick_js                = "/documents/d/mobilityado/slick-min" >
+<#assign left_slide                = "/documents/d/mobilityado/prev-arrow" >
+<#assign next_slide                = "/documents/d/mobilityado/next-arrow" >
 
 
 <link rel="stylesheet" type="text/css" href="${slick_css}"/>
@@ -20,8 +20,8 @@
         <div class="row principal-row">
             <div class="content row">
                 <div class="col-md-12 text-center">
-                    <h3 class="titles1 fpurple">${titulo.getData()}</h3>
-                    <p class="ptxt text-center fblack">${descripcion.getData()}</p>
+                    <h3 class="titles1 fpurple">${ImagenBanner.titulo.getData()}</h3>
+                    <p class="ptxt text-center fblack">${ImagenBanner.descripcion.getData()}</p>
                 </div>
                 
                 <div class="col-12">    
@@ -37,7 +37,7 @@
                                     </#if>
                             
                                     <#if cur_city.url_img_click.getData() !="">
-                                        <div class="image img_btn" style="background-image: url( ${cur_city.Imagen3od1.getData()} );">
+                                        <div class="image img_btn" onclick="window.open(' ${cur_city.url_img_click.getData()} ', '_self');" style="background-image: url( ${cur_city.Imagen3od1.getData()} );">
                                     <#else>
                                         <div class="image" style="background-image: url( ${cur_city.Imagen3od1.getData()} );">
                                     </#if>
@@ -292,7 +292,51 @@
     }
 
 
-    
+    <#if (ImagenBanner.TipoDeFondo.getData())?? && ImagenBanner.TipoDeFondo.getData() !="">
+        <#if ImagenBanner.TipoDeFondo.getData() == "complet" >
+            .principal-city_${article_id} .bkg_completo{
+                display: block;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 50%;
+                z-index: 1;
+                
+                <#if (ImagenBanner.getData())?? && ImagenBanner.getData() != "">
+                    background: url(${ImagenBanner.getData()});
+                <#else>
+                    background: #E11F2A;
+                </#if>
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        </#if>
+    </#if>
+
+
+    <#if (ImagenBanner.TipoDeFondo.getData())?? && ImagenBanner.TipoDeFondo.getData() !="">
+        <#if ImagenBanner.TipoDeFondo.getData() == "column" >
+        .principal-city_${article_id} .principal-row .background-image {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            <#if (ImagenBanner.getData())?? && ImagenBanner.getData() != "">
+                background: url(${ImagenBanner.getData()});
+            <#else>
+                background: #E11F2A;
+            </#if>
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 500px;
+            border-radius: 25px;
+            position: absolute;
+            z-index: 1;
+        }
+        </#if>
+    </#if>
 
 
 
