@@ -1,0 +1,362 @@
+<#assign lenguaje                = "/documents/d/mobilityado/lenguaje" >
+<#assign logo                = "/documents/d/mobilityado/mobility-ado-logo" >
+
+<div class="top-header">
+    <div class="d-flex justify-content-between cont_head_ert">			
+		<div class="atention">
+           <a href="https://hola.ado.com.mx/hc/es" class="atencion" target="_blank">
+				<img src="${lenguaje}" alt="Hola ADO">
+                <span class="text" id="text-hello">Atención a clientes HOLA</span>
+           </a>
+       </div>
+        
+        <div class="sup2 text-right">
+            <span class="mr-4 d-md-inline-block d-none">
+                <span id="text-size">Tamaño</span>
+                <a id="minusTypo" class="asize">&nbsp; a-</a>
+                <a id="plusTypo" class="asize">&nbsp; A+</a>
+            </span>
+
+            <span class="d-md-inline-block">
+                <img src="${lenguaje}" class="mr-2" width="20px">
+                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ES - Español</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="/es/">ES - Español</a>
+                    <a class="dropdown-item" href="/en/">EN - English</a>
+                </div>
+            </span>
+        </div>
+    </div>
+</div>
+
+
+
+<nav class="navbar navbar-expand-lg container" id="menubar">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/web/mobilityado/inicio">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/web/mobilityado/corporativo">Corporativo</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/web/mobilityado/manuales">Manuales</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/web/mobilityado/recursos-graficos">Recursos Gráficos</a>
+            </li>
+			<li class="nav-item">
+                <a class="nav-link" href="/web/mobilityado/multimedia">Multimedia</a>
+            </li> 
+			<li class="nav-item text-center">
+                <a class="nav-link" href="/web/mobilityado/mobilityado-ciudades">Mobility ADO<br>Ciudades</a>
+            </li> 
+			<li class="nav-item dropdown text-center">
+                <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-expanded="false">
+					Sellos Operativos<br>Urbanos
+				</a>
+               
+				<div class="dropdown-menu">
+                    <a class="dropdown-item" href="/web/mobilityado/sit-aguascalientes1">SIT Aguascalientes</a>
+					 <!--<a class="dropdown-item" href="/web/mobilityado/mivsa">MIVSA</a>
+					<a class="dropdown-item" href="/web/mobilityado/tatpa-puebla-urbanos">TATPA Puebla Urbanos</a>
+					<a class="dropdown-item" href="/web/mobilityado/mum-merida">MUM Mérida</a>-->  
+                </div>              
+            </li>
+            <!--
+            <li class="nav-item dropdown text-center">
+                <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-expanded="false">
+					Marcas de<br>transición
+				</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="/web/mobilityado/tepu">TEPU</a>
+                </div>
+            </li> -->
+            <!--
+            <li class="nav-item dropdown text-center">
+                <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-expanded="false">
+					Intermodalidad
+				</a>
+				<div class="dropdown-menu">
+                    <a class="dropdown-item" href="/web/mobilityado/red-de-interconexion-maya">Red de interconexión Maya</a>
+                </div>
+            </li>-->
+        </ul>
+    </div>
+</nav>
+
+<script>
+    $("#plusTypo").on("click",function(){
+        var p=parseInt($("p").css("font-size"));
+        var a=parseInt($("a").css("font-size"));
+        p=p+1+"px";
+        a=a+0.5+"px";
+        $("p").css({"font-size":p});
+        $("a").css({"font-size":a});
+    });
+
+    $("#minusTypo").click(function(){
+        var p=parseInt($("p").css("font-size"));
+        var a=parseInt($("a").css("font-size"));
+        p=p-1+"px";
+        a=a-1+"px";
+        $("p").css({"font-size":p});
+        $("a").css({"font-size":a});
+    });
+	
+	$(document).ready(function () {
+        const translations = {
+            "es": {
+                "text-hello": "Atención a clientes HOLA",
+                "text-size": "Tamaño",
+                "dropdownMenuLink": "ES - Español"
+            },
+            "en": {
+                "text-hello": "Customer service HOLA",
+                "text-size": "Size",
+                "dropdownMenuLink": "EN - English"
+            }
+        };
+		
+	    const path = window.location.pathname;
+    	let lang = path.includes("/en") ? "en" : "es"; // Por defecto, español
+		
+			$("#text-hello").text(translations[lang]["text-hello"]);
+			$("#text-size").text(translations[lang]["text-size"]);
+			$("#dropdownMenuLink").text(translations[lang]["dropdownMenuLink"]);		
+    });
+</script>
+
+
+	
+<style>
+    /* Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+    strong{
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        font-weight: 700;;
+    }
+
+    /* Estilos generales */
+    :root{
+        --purple:   #5F2167;
+        --red:      #E11F2A; 
+        --white:    #ffffff;
+        --fafa:     #FAFAFA;
+        --f4f6:     #F4F6F9;
+        --black:    #000000;
+        --dark1:    #31343C;
+        --dark2:    #222222;
+        --dark3:    #1D1F24;
+    }
+
+    .myborder{
+        border: 1px dashed #00ffff !important;
+    }
+    .purpleback{
+        background-color: var(--purple);
+    }
+    .faback{
+        background-color: var(--fafa);
+    }
+    .f4back{
+        background-color: var(--f4f6);
+    }
+    .fpurple{
+        color: var(--purple);
+    }
+    .fred{
+        color: var(--red);   
+    }
+    .fwhite{
+        color: var(--white);   
+    }
+    .fblack{
+        color: var(--black);   
+    }
+    .fdark{
+        color: var(--dark1);
+    }
+    .fdark2{
+        color: var(--dark2);
+    }
+    .fdark3{
+        color: var(--dark3);
+    }
+    .titles1{
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        line-height: 48px;
+        font-weight: 700;
+        font-size: 40px;
+    }
+    .titles2{
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        line-height: 28.8px;
+        font-weight: 700;
+        font-size: 24px;
+    }
+    .titles3{
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        line-height: 38.4px;
+        font-weight: 700;
+        font-size: 32px;
+    }
+    .titles4{
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        line-height: 21.6px;
+        font-weight: 700;
+        font-size: 18px;
+    }
+    .subtitles{
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        line-height: 19.2px;
+        font-weight: 700;
+        font-size: 16px;
+    }
+    p,
+    ul li,
+    ol, li{
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    }
+    .ptxt{
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21.6px;
+    }
+    .ptxt2{
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16.8px;
+    }
+    .ptxt3{
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14.4px;
+    }
+    .ptxt4{
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19.2px;
+    }
+    .redbtn{
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        border:1px solid var(--red);
+        background-color: var(--red);
+        color: var(--white);   
+        font-size: 12px; 
+    }.redbtn:hover{
+        background-color: var(--white);
+        color: var(--red);   
+    }
+    .whitebtn{
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        border:1px solid var(--purple);
+        background-color: var(--white);
+        color: var(--purple);   
+        font-size: 12px; 
+    }.whitebtn:hover{
+        background-color: var(--purple);
+        color: var(--white);   
+    }
+    .purplebtn{
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        border:1px solid var(--purple);
+        background-color: var(--purple);
+        color: #fff;   
+        font-size: 12px; 
+    }.purplebtn:hover{
+        background-color: var(--white);
+        color: var(--purple);   
+    }	
+    /* Activar menú desplegable con Hover */
+    .dropdown:hover > .dropdown-menu { display: block; margin-top: -10px; }
+    .dropdown > .dropdown-toggle:active { pointer-events: none; }
+    .site-wrapper .navbar .dropdown-menu {
+        width: 200px !important;
+        border-radius: 0 !important;
+        border: none !important;
+        padding: 0 !important;
+    }
+    #menubar a.dropdown-item {
+        border-radius: 0 !important;
+        background-color: #fff;
+        font-family: 'Montserrat', Arial, sans-serif;
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+    #menubar a.dropdown-item:hover{
+        background-color: #5F2167 !important;
+        color: #ffffff !important;
+    }
+		
+		
+    .sup2 {padding-right: 30px;}
+    .cont_head_ert{max-width: 1140px; margin: auto; width: 90%;}
+    .top-header .container{ width: 100%; margin: 0 auto; font-family: 'Montserrat', Arial, sans-serif; font-weight: 100; }
+    .top-header { background-color: #373A43; color: #fff; font-size: 12px; padding: 10px 0px; position: fixed; width: 100%; top: 0px; z-index: 2; left: 0px; font-family: 'Montserrat', Arial;}
+    
+    .top-header a{ font-size:12px; color:#FFF; font-weight:300; }
+    .top-header a.dropdown-item{ color:#000; font-weight:100; }
+    .top-header .dropdown-menu{ box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.35); }
+    .top-header .dropdown-menu::after { padding-top: 0px; }
+    .site-wrapper .navbar .dropdown-menu { padding-top: 0px; top: 46px; margin-left: -94px; width: 100%; }
+    .site-wrapper .navbar-collapse { margin-top: 0px; }
+    .site-wrapper .dropdown-toggle:after { display:none; }
+    .site-wrapper .navbar .dropdown-menu { top: 36px; width: 175px; border-radius: 4px; border: 1px solid #BDCAD0; left: 28px; padding:3px 0px; background: #fff; left: auto;}
+    #menubar a.nav-link{ font-size: 12px; font-family:'Montserrat', Arial, sans-serif; letter-spacing: .125rem; line-height: normal; }
+    #menubar #navbarNavDropdown{ justify-content: end; }
+    #menubar a.dropdown-item{ border-top: 0px; background-color: #fff; padding: 10px 15px; font-size: 12px; font-family: 'Montserrat', Arial, sans-serif; }
+    #menubar a.dropdown-item:hover { background: #0066CC; color: #fff; border-radius: 8px; }
+    .menu-page{ margin: auto; }
+    
+    .navbar-ado{ z-index: 4 !important; top: 40px; position: sticky;     background-color: white;}
+    .site-wrapper.signed-in .navbar-ado{ top: 40px;}
+    img.logo-site {max-width: 120px;}
+    
+    .site-wrapper .navbar-nav li.nav-item {padding: 0 5px 0 5px; border-right: solid 1px #D9D9D9;}
+    .site-wrapper .navbar-nav li.nav-item:last-child {padding: 0 5px 0 5px; border-right: solid 0px #D9D9D9;}
+    
+    .portlet-decorate .portlet-content{background: none;}
+    .container-fuid { max-width: 1140px; margin: auto;}
+
+    @media only screen and (max-width: 995px) {
+        .navbar-expand-lg .navbar-collapse .navbar-nav {flex-direction: row;}
+        .site-wrapper button.navbar-toggler {background-color: inherit; border: none; position: absolute; right: 0px; top: 0px; margin: 0px;}
+    }
+
+    @media only screen and (max-width: 600px) {
+        .top-header .site-wrapper { padding-top: 0px; }
+        #navigation .navbar-brand { margin-left: -30px; }
+        .site-wrapper { padding-top: 0px; }
+        .site-wrapper .navbar { padding: 0rem 0rem 0rem 2rem; top: 0px; position: relative; background-color: #fff; }
+        .site-wrapper button.navbar-toggler {background-color: inherit; border: none; position: absolute; right: 0px; top: -50px; margin: 0px;}    
+        .site-wrapper .navbar .navbar-collapse { position: relative; background-color: inherit; top: 0px; right: 15px; padding: 5px; width: 100%; }    
+        #menubar .btn-login, .top-header{ display:none; }
+        #menubar .dropdown-item { font-family: 'Montserrat', Arial, sans-serif; font-size: 16px; line-height: 10px; background-color: inherit; }
+        .sup1, .sup2{width: 100%;}
+        .cont_head_ert{flex-flow: column wrap; text-align: center;}
+        .menu-page {margin: auto; max-width: 100% !important; flex: 100%; margin: 0px !important; padding: 0px !important;}
+        .blog-menu {width: 100% !important;}
+        #menubar {top: 0px;}
+        .navbar-expand-lg .navbar-collapse .navbar-nav { margin-top: 0px; flex-direction: column;}    
+        .nav-link, .nav-underline .tab a {padding: 1rem 1rem; position: relative;}
+        .site-wrapper .navbar-nav li.nav-item {border-right: solid 0px #D9D9D9;}
+    }
+		
+	@media (min-width: 576px) {
+        .portlet .visible-interaction {
+        display: block !important;
+    }
+}
+</style>
