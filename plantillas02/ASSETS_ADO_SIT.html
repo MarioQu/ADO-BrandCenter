@@ -216,7 +216,13 @@
                             <div class="card-header ptxt3 fblack">
                                 11/12/2023
                             </div>
-                            <img src="/documents/d/mobilityado/image" alt="" class="img-fluid w-100">
+                            <div class="cont-image d-flex align-items-center justify-content-center px-4">
+                                <#if cur_fotografias_bucle_fotografias.id_foto.getData() == "">
+                                    <img src="/documents/d/mobilityado/image-icon" alt="" class="w-50">
+                                <#else>
+                                    <img src="https://drive.google.com/thumbnail?id=${cur_fotografias_bucle_fotografias.id_foto.getData()}" alt="" class="img-fluid w-100"/> 
+                                </#if>
+                            </div>
                             <div class="card-body">
                                 <p class="ptxt2 fdark3 mb-1 titleAsset">
                                     ${cur_fotografias_bucle_fotografias.nombre_asset_fotos.getData()}
