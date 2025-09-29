@@ -74,7 +74,14 @@
                     <div class="col-lg-4">
                         <div class="card">
                             <div class="cont-image d-flex align-items-center justify-content-center px-4">
-                                <img src="https://drive.google.com/thumbnail?id=${cur_logotipos_bucle_logotipos.ID_imgDrive.getData()}" alt="Imagen de Google Drive" />   
+                                  
+                                
+                                <#if cur_logotipos_bucle_logotipos.ID_imgDrive.getData() == "">
+                                    <img src="/documents/d/mobilityado/image-icon" alt="" class="w-50">
+                                <#else>
+                                    <img src="https://drive.google.com/thumbnail?id=${cur_logotipos_bucle_logotipos.ID_imgDrive.getData()}" alt="" /> 
+                                </#if>
+                                
                             </div>                    
                             <div class="card-body">
                                 <p class="ptxt2 fdark3 titleAsset">
@@ -161,7 +168,11 @@
                     <div class="col-lg-4">
                         <div class="card">
                             <div class="cont-image d-flex align-items-center justify-content-center">
-                                <iframe src="https://drive.google.com/file/d/${cur_audiovisuales_bucle_audiovisuales.id_drive.getData()}/preview" allowfullscreen></iframe>
+                                <#if cur_audiovisuales_bucle_audiovisuales.id_drive.getData() == "">
+                                    <img src="/documents/d/mobilityado/video-icon-1" alt="" class="w-50">
+                                <#else>
+                                    <iframe src="https://drive.google.com/file/d/${cur_audiovisuales_bucle_audiovisuales.id_drive.getData()}/preview" allowfullscreen></iframe>
+                                </#if>
                             </div> 
                             <div class="card-body">
                                 <p class="ptxt2 fdark3 mb-1 titleAsset">
