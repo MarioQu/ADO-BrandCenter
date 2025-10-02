@@ -78,7 +78,7 @@
                                     <img src="/documents/d/mobilityado/image-icon" alt="" class="w-50">
                                 <#else>
                                     <img src="https://drive.google.com/thumbnail?id=${cur_logotipos_bucle_logotipos.ID_imgDrive.getData()}" alt="" /> 
-                                </#if> 
+                                </#if>
                             </div>                    
                             <div class="card-body">
                                 <p class="ptxt2 fdark3 titleAsset">
@@ -191,7 +191,6 @@
 
 <!-- Fotografías -->
 <section class="container-fluid assets-container my-5">
-    <#if fotografias.bucle_fotografias.getSiblings()?has_content>
     <div class="container-lg">
         <div class="row rowHead mb-4">
             <div class="col-lg-9">
@@ -210,24 +209,31 @@
         </div>
         
         <div class="row">
-            <#list fotografias.bucle_fotografias.getSiblings() as cur_fotografias_bucle_fotografias>
-                <div class="col-lg-4">
-                    <div class="card">
-                        <div class="card-header ptxt3 fblack">
-                            11/12/2023
+            <#if fotografias.bucle_fotografias.getSiblings()?has_content>
+                <#list fotografias.bucle_fotografias.getSiblings() as cur_fotografias_bucle_fotografias>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-header ptxt3 fblack">
+                                11/12/2023
+                            </div>
+                            <div class="cont-image d-flex align-items-center justify-content-center px-4">
+                                <#if cur_fotografias_bucle_fotografias.id_foto.getData() == "">
+                                    <img src="/documents/d/mobilityado/image-icon" alt="" class="w-50">
+                                <#else>
+                                    <img src="https://drive.google.com/thumbnail?id=${cur_fotografias_bucle_fotografias.id_foto.getData()}" alt="" class="img-fluid w-100"/> 
+                                </#if>
+                            </div>
+                            <div class="card-body">
+                                <p class="ptxt2 fdark3 mb-1 titleAsset">
+                                    ${cur_fotografias_bucle_fotografias.nombre_asset_fotos.getData()}
+                                </p>
+                                <p class="ptxt3 text-muted mb-1">Versión 2</p>
+                                <a href="${cur_fotografias_bucle_fotografias.url_asset_fotos.getData()}" target="_blank" download class="btn redbtn w-100">Descargar</a>
+                            </div>
                         </div>
-                        <img src="/documents/d/mobilityado/image" alt="" class="img-fluid w-100">
-                        <div class="card-body">
-                            <p class="ptxt2 fdark3 mb-1 titleAsset">
-                                ${cur_fotografias_bucle_fotografias.nombre_asset_fotos.getData()}
-                            </p>
-                            <p class="ptxt3 text-muted mb-1">Versión 2</p>
-                            <a href="${cur_fotografias_bucle_fotografias.url_asset_fotos.getData()}" target="_blank" download class="btn redbtn w-100">Descargar</a>
-                        </div>
-                    </div>
-                </div><!-- /col -->
-            </#list>
+                    </div><!-- /col -->
+                </#list>
+            </#if>
         </div>
-    </div><!-- /container-lg -->
-    </#if>
+    </div>
 </section>
