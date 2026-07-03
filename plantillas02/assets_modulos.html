@@ -1,0 +1,127 @@
+<style>
+    .assets-container .card-body{
+        height: 160px;
+    }
+    .assets-container .card .cont-image{
+        background-position: left center !important;
+        background-attachment: scroll !important;
+        background-size: cover !important;        
+        text-align: center;
+        height: 235px; 
+    }
+    .assets-container .redbtn{
+        position: absolute;
+        bottom: 0;
+        width: 90% !important;
+        left: 5% !important;
+        bottom: 15px !important;
+    }
+    .assets-container .title{
+    
+        font-size: 32px;
+    }
+    .assets-container .rowHead{
+        border-bottom: 1px solid #EDEDED;
+    }
+    .dropdown-assets{
+        background-color: var(--red);
+        font-size: 14px; 
+        color: var(--white) !important;
+    }
+    .titleAsset{
+       
+        font-weight: 500
+    }
+    iframe{
+        width: 100% !important;
+        border: none !important;
+    }
+    iframe img{
+        background-color: #000 !important;
+    }
+    .ptxt3,
+    .ptxt3 p {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14.4px;
+    }
+</style>
+
+
+<div class="container-fluid assets-container">
+    <#if grupo_assets.getSiblings()?has_content>
+        <#list grupo_assets.getSiblings() as cur_grupo_assets>
+            <div class="container-lg mb-5">
+                
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="title fdark3">
+                            ${cur_grupo_assets.nombre_grupo.getData()}
+                            <hr>
+                        </h2>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <#if cur_grupo_assets.cards.getSiblings()?has_content>
+                        <#list cur_grupo_assets.cards.getSiblings() as cur_grupo_assets_cards>
+                        
+                            <div class="col-lg-4">
+                                <div class="card">
+                                    <#if cur_grupo_assets_cards.fondo_asset.getData() ?has_content == false>
+                                        <div class="cont-image d-flex align-items-center justify-content-center px-3" style="background-color: #5F2268;">
+                                    <#else>
+                                        <div class="cont-image d-flex align-items-center justify-content-center px-3" style="background: url('${cur_grupo_assets_cards.fondo_asset.getData()}');">
+                                    </#if>                                    
+                                        <!-- Líneas para mostrar un preview del documento/asset -->
+                                        <!--<#if cur_grupo_assets_cards.ID_drive.getData() == "">
+                                            <img src="/documents/d/mobilityado/image-icon" alt="" class="w-50">
+                                        <#else>
+                                            <img src="https://drive.google.com/thumbnail?id=${cur_grupo_assets_cards.ID_drive.getData()}" alt="" /> 
+                                        </#if> -->
+                                        
+                                        <!-- Tipos archivo: pdf | imagen, illustrator | word | pptx | video | folder -->
+                                        
+                                        <#if cur_grupo_assets_cards.tipo_asset.getData() == "pdf">
+                                            <img src="/documents/d/mobilityado/fondo-pdfs" alt="" class="w-100"/>
+                                        <#elseif cur_grupo_assets_cards.tipo_asset.getData() == "illustrator">                                     
+                                            <img src="/documents/d/mobilityado/illustrator2" alt="" class="w-100"/>
+                                        <#elseif cur_grupo_assets_cards.tipo_asset.getData() == "word">                                     
+                                            <img src="/documents/d/mobilityado/word2" alt="" class="w-100"/>
+                                        <#elseif cur_grupo_assets_cards.tipo_asset.getData() == "pptx">                                     
+                                            <img src="/documents/d/mobilityado/power-point2" alt="" class="w-100"/>
+                                        <#elseif cur_grupo_assets_cards.tipo_asset.getData() == "folder">                                     
+                                            <img src="/documents/d/mobilityado/folder1" alt="" class="w-100"/>
+                                        <#elseif cur_grupo_assets_cards.tipo_asset.getData() == "imagen">                                     
+                                            <img src="https://drive.google.com/thumbnail?id=${cur_grupo_assets_cards.ID_drive.getData()}" alt="" /> 
+                                        <#elseif cur_grupo_assets_cards.tipo_asset.getData() == "video">                                     
+                                            <img src="/documents/d/mobilityado/fondo-video" alt="" class="w-100"/>
+                                            <!-- <iframe src="https://drive.google.com/file/d/${cur_grupo_assets_cards.ID_drive.getData()}/preview" allowfullscreen></iframe> -->
+                                        <#else>
+                                            <img src="/documents/d/mobilityado/image" alt="" /> 
+                                        </#if>
+                                        
+                                        
+                                    </div> 
+                                                                
+                                    <div class="card-body">
+                                        <p class="ptxt2 fdark3 titleAsset">
+                                            ${cur_grupo_assets_cards.nombre_asset.getData()}
+                                        </p>
+                                        
+                                        <div class="ptxt3 text-muted mb-1">
+                                            <span class="text-uppercase">${cur_grupo_assets_cards.tipo_asset.getData()}</span><br>
+                                            ${cur_grupo_assets_cards.metadatos.getData()}
+                                        </div>
+                                        <a href="${cur_grupo_assets_cards.link_descarga.getData()}" target="_blank" download class="btn redbtn w-100">Descargar</a>
+                                    </div><!-- .card-body -->                                    
+                                </div>
+                            </div>
+                        </#list>
+                    </#if>
+                </div>
+                
+            </div>
+        </#list>
+    </#if>
+</div>
